@@ -13,3 +13,6 @@
 <!-- # allert con laravel ui ad oggi si usa ancora boodstrap 4 con jquery e popper.js -->
 <!-- ? -3 migrate -->
 <!-- dopo fatto tutto bisogna andare a fare una migerazione per connettere le tabelle create da laravel ui con il server (crea le cartelle di psw e utente e tutti i collegamenti per la 'protezione') -->
+<!-- ? -4 login -->
+<!-- dopo l'avvio del server(npm artisan serve) facciamo la registrazione ' simone-agentelazio -password' -->
+<!-- dopo la registrazione eliminiamo la rotta per essa con un array in Auth e aggiungiamo ['register' => false] per non permettere altre registrazioni   -->
