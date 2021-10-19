@@ -21,14 +21,16 @@
 <!-- cambiare le varie rotte tra web e homeController che riportano alle view -->
 <!-- per cambiare la landing page da home ad admin bisogna cambiare ...public const HOME = '/home';.... in app/Providers/RouteServiceProvider.php  -->
 <!-- cambiamo in guest/welcome in guest/home (cambiare anche la route in web.php) -->
-<!-- ? -6 controller -->
+<!-- ? -6 controller admin-->
 <!-- creiamo un contoller per gestire le rotte admin con il comando 'php artisan make:controller Admin/HomeController -->
 <!-- eliminiamo il controlle middleware in home controller (non admin ma quello libero 'guest') -->
 <!-- ? -7 web -->
 <!-- aggiungiamo il middleware(auth) alla route /Admin cosi da non scriverlo nell controller -->
 <!-- creiamo un group dove inserire le rotte che hanno admin/... , il middleware , il name della rotta. il prefix, il name space-->
-<!-- ?model -->
+<!-- ? -8 model -->
 <!-- cereiamo il models del post (ogetto del nostro progetto) e la relativa migration per il server con il comando 'php artisan make:model Models/Post -m' -->
 <!-- andiamo a modificare i paramiti della migration che creerà le nostre colonne nel db $table.... andando ad aggiungere i relativi parametri per definire il tipo di dato nel db (unique, string('title',50) ecccc) -->
 <!-- in caso non sia stata creata dal comando nella migration dobiamo aggiungere la parte relativa alla funzione down per il rolle back -->
 <!-- lanciamo la migration con il comando ?php artisan migrate' e creiamo la nostra 'tupla ' nel db -->
+<!-- ? -9 controller 'Posts'-->
+<!-- creazione controller per la parte Post'lato back per le crud'  con il comando php artisan make:controller Admin/PostContoller --resource (con resurce ci creerà tutte le funzioni crud nel controlle in automatico ) -->
