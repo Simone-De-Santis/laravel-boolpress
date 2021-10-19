@@ -4,5 +4,9 @@
 <!-- creato db boolpress_db  aggancianto al fikle .env e cambiato nome db e psw e username in root-->
 <!-- ? -2 autentication -->
 <!-- installiamo i pacchetti di autentificazione con 'composer require laravel/ui:^2.4'
-      Laraverl ui genera pacchetti di autentificazione per registrazioni nuovi utenti, controllo di login,
+      Laraverl ui predispone pacchetti di autentificazione per registrazioni nuovi utenti, controllo di login,
      controller per mandare email per reimpostare la psw  il controller per il restarte e lo spazio di archiviazione nomi -->
+<!-- ? -2.1 vue -->
+<!-- installiamo i pacchetti di vue --auth ('php artisan ui vue --auth') questo è possibile perche abiamo installato il pack precedente di laravel ui -->
+<!-- ?-2.1.1 attenzione -->
+<!-- dopo l'installazione ci chiderà di fare'npm install && npm run dev' l'&& non funziona in powershell apripre il promt con bash per avviare e attendere -->
