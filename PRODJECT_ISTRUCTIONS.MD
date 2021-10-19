@@ -11,3 +11,5 @@
 <!-- ?-2.1.1 attenzione -->
 <!-- dopo l'installazione ci chiderà di fare'npm install && npm run dev' l'&& non funziona in powershell apripre il promt con bash per avviare e attendere -->
 <!-- # allert con laravel ui ad oggi si usa ancora boodstrap 4 con jquery e popper.js -->
+<!-- ? -3 migrate -->
+<!-- dopo fatto tutto bisogna andare a fare una migerazione per connettere le tabelle create da laravel ui con il server (crea le cartelle di psw e utente e tutti i collegamenti per la 'protezione') -->
