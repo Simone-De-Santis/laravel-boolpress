@@ -34,3 +34,6 @@
 <!-- lanciamo la migration con il comando ?php artisan migrate' e creiamo la nostra 'tupla ' nel db -->
 <!-- ? -9 controller 'Posts'-->
 <!-- creazione controller per la parte Post'lato back per le crud'  con il comando php artisan make:controller Admin/PostContoller --resource (con resurce ci creerà tutte le funzioni crud nel controlle in automatico ) -->
+<!-- nel PostController agganciamo il modello creato precedentemete  use App\Models\Post -->
+<!-- andiamo a collegare tutte le rotte in web.php utilizzando Route::resource... per prendere tutte le rotte inserite nel controller relativo al post -->
+<!-- inserendo le rotte nel group admin tutte le rotte erediteranno i valori insriti precedentemente nelle spcifiche del group -->

@@ -23,4 +23,5 @@ Auth::routes(['register' => false]);
 Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('admin')->group(function () {
     // tutte le rotte protette
     Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('post', 'PostController');
 });
