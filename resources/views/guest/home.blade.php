@@ -71,7 +71,7 @@
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
       <div class="top-right links">
-        {{-- auth = se sei loggaro'autorizzato' mostra qusto else.. --}}
+        {{-- auth = se sei loggaro'autorizzato' mostra qusto else.. esiste il controllo contrario con @guest 'sei un ospite no n loggato' --}}
         @auth
           <a href="{{ url('/home') }}">Home guest</a>
         @else
