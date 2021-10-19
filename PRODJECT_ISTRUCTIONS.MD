@@ -27,3 +27,5 @@
 <!-- ? -7 web -->
 <!-- aggiungiamo il middleware(auth) alla route /Admin cosi da non scriverlo nell controller -->
 <!-- creiamo un group dove inserire le rotte che hanno admin/... , il middleware , il name della rotta. il prefix, il name space-->
+<!-- ?model -->
+<!-- cereiamo il models del post (ogetto del nostro progetto) e la relativa migration per il server con il comando 'php artisan make:model Models/Post -m' -->
