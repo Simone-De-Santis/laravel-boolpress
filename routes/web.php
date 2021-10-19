@@ -19,4 +19,8 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/admin', 'HomeController@index')->name('home');
+
+Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('admin')->group(function () {
+    // tutte le rotte protette
+    Route::get('/', 'HomeController@index')->name('home');
+});
