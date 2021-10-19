@@ -29,3 +29,6 @@
 <!-- creiamo un group dove inserire le rotte che hanno admin/... , il middleware , il name della rotta. il prefix, il name space-->
 <!-- ?model -->
 <!-- cereiamo il models del post (ogetto del nostro progetto) e la relativa migration per il server con il comando 'php artisan make:model Models/Post -m' -->
+<!-- andiamo a modificare i paramiti della migration che creerà le nostre colonne nel db $table.... andando ad aggiungere i relativi parametri per definire il tipo di dato nel db (unique, string('title',50) ecccc) -->
+<!-- in caso non sia stata creata dal comando nella migration dobiamo aggiungere la parte relativa alla funzione down per il rolle back -->
+<!-- lanciamo la migration con il comando ?php artisan migrate' e creiamo la nostra 'tupla ' nel db -->
