@@ -23,9 +23,9 @@
             <td>{{ $post->title }}</td>
             <td>{{ $post->created_at }}</td>
             <td>
-              <a href="{{ route('admin.post.show', $post->id) }}" class="btn btn-primary">Detail</a>
-              <a href="{{ route('#', $post->id) }}" class="btn btn-warning">Edit</a>
-              <a href="{{ route('#', $post->id) }}" class="btn btn-danger">Delete</a>
+              <a href="#" class="btn btn-primary">Detail</a>
+              <a href="#" class="btn btn-warning">Edit</a>
+              <a href="#" class="btn btn-danger">Delete</a>
             </td>
           </tr>
         @empty
