@@ -20,8 +20,8 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 
-Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('admin')->group(function () {
+Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('Admin')->group(function () {
     // tutte le rotte protette
     Route::get('/', 'HomeController@index')->name('home');
-    Route::resource('post', 'PostController');
+    Route::resource('posts', 'PostController');
 });

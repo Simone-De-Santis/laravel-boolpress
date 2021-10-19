@@ -37,3 +37,8 @@
 <!-- nel PostController agganciamo il modello creato precedentemete  use App\Models\Post -->
 <!-- andiamo a collegare tutte le rotte in web.php utilizzando Route::resource... per prendere tutte le rotte inserite nel controller relativo al post -->
 <!-- inserendo le rotte nel group admin tutte le rotte erediteranno i valori insriti precedentemente nelle spcifiche del group -->
+<!-- ? CRUD POST -->
+<!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
+<!-- Cominciamo con l'index nel controller e creiamo la pagina 'rotta presente nel view' in views/admin/index-->
+<!-- nell layout presente di base in laravel ui è gia carticato il link per js css ecc -->
+<!-- ! laravel ui usa bootsrap 4 -->

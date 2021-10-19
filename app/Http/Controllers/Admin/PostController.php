@@ -6,7 +6,7 @@ use App\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PostContoller extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +16,9 @@ class PostContoller extends Controller
     public function index()
     {
         //
+
+        $posts = Post::all();
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
