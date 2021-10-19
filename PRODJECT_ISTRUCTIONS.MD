@@ -23,3 +23,7 @@
 <!-- cambiamo in guest/welcome in guest/home (cambiare anche la route in web.php) -->
 <!-- ? -6 controller -->
 <!-- creiamo un contoller per gestire le rotte admin con il comando 'php artisan make:controller Admin/HomeController -->
+<!-- eliminiamo il controlle middleware in home controller (non admin ma quello libero 'guest') -->
+<!-- ? -7 web -->
+<!-- aggiungiamo il middleware(auth) alla route /Admin cosi da non scriverlo nell controller -->
+<!-- creiamo un group dove inserire le rotte che hanno admin/... , il middleware , il name della rotta. il prefix, il name space-->
