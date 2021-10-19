@@ -10,3 +10,4 @@
 <!-- installiamo i pacchetti di vue --auth ('php artisan ui vue --auth') questo è possibile perche abiamo installato il pack precedente di laravel ui -->
 <!-- ?-2.1.1 attenzione -->
 <!-- dopo l'installazione ci chiderà di fare'npm install && npm run dev' l'&& non funziona in powershell apripre il promt con bash per avviare e attendere -->
+<!-- # allert con laravel ui ad oggi si usa ancora boodstrap 4 con jquery e popper.js -->
