@@ -16,3 +16,8 @@
 <!-- ? -4 login -->
 <!-- dopo l'avvio del server(npm artisan serve) facciamo la registrazione ' simone-agentelazio -password' -->
 <!-- dopo la registrazione eliminiamo la rotta per essa con un array in Auth e aggiungiamo ['register' => false] per non permettere altre registrazioni   -->
+<!-- ? -5 refactoring -->
+<!-- all'inerno dell reorurces\ views creiamo le cartelle admin e guest grazie alle quali andremo a dividere tra ciò che vedrà l'amministratore e ciò che vedrà l'utente -->
+<!-- cambiare le varie rotte tra web e homeController che riportano alle view -->
+<!-- per cambiare la landing page da home ad admin bisogna cambiare ...public const HOME = '/home';.... in app/Providers/RouteServiceProvider.php  -->
+<!-- cambiamo in guest/welcome in guest/home (cambiare anche la route in web.php) -->
