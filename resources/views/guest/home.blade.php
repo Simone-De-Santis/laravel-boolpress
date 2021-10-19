@@ -71,6 +71,7 @@
   <div class="flex-center position-ref full-height">
     @if (Route::has('login'))
       <div class="top-right links">
+        {{-- auth = se sei loggaro'autorizzato' mostra qusto else.. --}}
         @auth
           <a href="{{ url('/home') }}">Home guest</a>
         @else
