@@ -21,3 +21,5 @@
 <!-- cambiare le varie rotte tra web e homeController che riportano alle view -->
 <!-- per cambiare la landing page da home ad admin bisogna cambiare ...public const HOME = '/home';.... in app/Providers/RouteServiceProvider.php  -->
 <!-- cambiamo in guest/welcome in guest/home (cambiare anche la route in web.php) -->
+<!-- ? -6 controller -->
+<!-- creiamo un contoller per gestire le rotte admin con il comando 'php artisan make:controller Admin/HomeController -->
