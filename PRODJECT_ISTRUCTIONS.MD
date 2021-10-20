@@ -58,8 +58,9 @@
 <!-- andiamo a creare in web.php una rotta di fallback cioè una rotta generiche ... una rotta che intercetta tutte le rotte che non possono entrare (per un motivo o per un altro ) nelle rotte create per l'admin o le auth
 Route::get('{any?}', function () {
     return view('guest.home');
-})->where('any', '.*');
+})->where('any', '.*');-->
 
-'{any?}' -> è un parametro dinamica che sta per 'accetta qualsiasi cosa'
+<!--'{any?}' -> è un parametro dinamica che sta per 'accetta qualsiasi cosa'
 where('any', '.*'); -> è una espressione regolare che dice prendi any che può essere di qualsiasi tipo qualsiasi carattere e in qualsiasi quantità
 -->
+<!--  nella guest home blade andiamo a gestire la nostra classica pagina html dove inseriremo vue . importiamo css e js dalle classiche rotte di compilazione -->
