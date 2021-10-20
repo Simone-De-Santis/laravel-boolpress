@@ -52,3 +52,14 @@
 <!--# Show (R)  -->
 <!-- creiamo un file show dove andremo a descrivere il dettaglio del post  poi andiamo nel controller e passiamo il dettaglio del'articolo (id) all view-->
 <!-- in Laravel con la laravel dependency inception possiamo passare alle view direttamente il parametro del dettaglio senza andare a specificare il parametro tramite il quale ciò avviene -->
+
+<!-- * VUE -->
+<!-- in questa applicazione gestiremo la parte admin da laravel e la parte user experience con vue  -->
+<!-- andiamo a creare in web.php una rotta di fallback cioè una rotta generiche ... una rotta che intercetta tutte le rotte che non possono entrare (per un motivo o per un altro ) nelle rotte create per l'admin o le auth
+Route::get('{any?}', function () {
+    return view('guest.home');
+})->where('any', '.*');
+
+'{any?}' -> è un parametro dinamica che sta per 'accetta qualsiasi cosa'
+where('any', '.*'); -> è una espressione regolare che dice prendi any che può essere di qualsiasi tipo qualsiasi carattere e in qualsiasi quantità
+-->
