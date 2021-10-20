@@ -25,16 +25,16 @@
         @endauth
       </div>
     @endif
+
   </div>
   {{-- useremo vue per la gestione della pagina a livello di user --}}
 
   <div id="root">
 
 
-
   </div>
-
-  <script src="{{ asset('js/app.js') }}"></script>
+  {{-- cambiare lo script co il front.js --}}
+  <script src="{{ asset('js/front.js') }}"></script>
 </body>
 
 </html>

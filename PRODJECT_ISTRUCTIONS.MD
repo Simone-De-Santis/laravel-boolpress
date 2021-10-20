@@ -89,3 +89,4 @@ const app = new Vue({
 -->
 <!-- con questo codice andiamo a dire a JS di importare vue , importare il componente app vue, inizializza una nuova applicazione che parte dall'elemento con id #root e come rendere la home sarà il componente app   -->
 <!-- webpack compilerà il tutto e con npm run dev lo faremo compilare -->
+<!-- potremo fare lo stesso con sass per  importare 2 file separati-->

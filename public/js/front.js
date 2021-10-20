@@ -1924,6 +1924,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App"
 });
@@ -37611,7 +37612,10 @@ var staticRenderFns = [
                 "\n                    Sito in costruzione\n                "
               )
             ])
-          ])
+          ]),
+          _vm._v(
+            "\n            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n        "
+          )
         ])
       ])
     ])

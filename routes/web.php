@@ -22,8 +22,12 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('Admin')->
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostController');
 });
-// # route di fallBack
 
-Route::get('{any?}', function () {
-    return view('guest.home');
-})->where('any', '.*');
+
+
+
+// # route di fallBack va messa alla fine del file web.php
+
+Route::get("{any?}", function () {
+    return view("guest.home");
+})->where("any", ".*");
