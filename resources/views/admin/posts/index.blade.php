@@ -21,9 +21,10 @@
           <tr>
             <td>{{ $post->id }}</td>
             <td>{{ $post->title }}</td>
-            <td>{{ $post->created_at }}</td>
+            {{-- usiamo la funzione per stampare la data formattata ' funzione proviene dal model ' --}}
+            <td>{{ $post->getFormattedDate('created_at', 'd-m-Y') }}</td>
             <td>
-              <a href="#" class="btn btn-primary">Detail</a>
+              <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary">Detail</a>
               <a href="#" class="btn btn-warning">Edit</a>
               <a href="#" class="btn btn-danger">Delete</a>
             </td>

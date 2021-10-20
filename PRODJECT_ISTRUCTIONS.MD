@@ -37,10 +37,18 @@
 <!-- nel PostController agganciamo il modello creato precedentemete  use App\Models\Post -->
 <!-- andiamo a collegare tutte le rotte in web.php utilizzando Route::resource... per prendere tutte le rotte inserite nel controller relativo al post -->
 <!-- inserendo le rotte nel group admin tutte le rotte erediteranno i valori inseriti precedentemente nelle specifiche del group -->
-<!-- ? CRUD POST -->
+<!-- ? CRUD POST  Admin (back and)-->
+<!-- # index  (R)-->
 <!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
 <!-- Cominciamo con l'index nel controller e creiamo la pagina 'rotta presente nel view' in views/admin/index-->
 <!-- nel layout presente di base in laravel ui è gia caricato il link per js css ecc -->
 <!-- ! laravel ui usa bootsrap 4 -->
-<!-- !1.59 -->
-<!--  -->
+<!-- utilizzando carbon possiamo stilizzare le date -->
+<!-- andiamo nella sezione del modello 'in questo caso Posts' importiamo Carbon con 'use Carbon\Carbon; -->
+<!-- all'interno della classe model andremo a creare una funzione che grazie a parametri esterni ci permetterà di restituire una data     public function getFormattedDate($column, $format = 'd-m-Y H:i:s')
+    {
+        return Carbon::create($this->$column)->format($format);
+    } -->
+<!--# Show (R)  -->
+<!-- creiamo un file show dove andremo a descrivere il dettaglio del post  poi andiamo nel controller e passiamo il dettaglio del'articolo (id) all view-->
+<!-- in Laravel con la laravel dependency inception possiamo passare alle view direttamente il parametro del dettaglio senza andare a specificare il parametro tramite il quale ciò avviene -->
