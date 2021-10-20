@@ -74,6 +74,9 @@
         {{-- auth = se sei loggaro'autorizzato' mostra qusto else.. esiste il controllo contrario con @guest 'sei un ospite no n loggato' --}}
         @auth
           <a href="{{ url('/home') }}">Home guest</a>
+          <a href="{{ url('/admin/posts') }}">Home Admin</a>
+
+
         @else
           <a href="{{ route('login') }}">Login</a>
 
