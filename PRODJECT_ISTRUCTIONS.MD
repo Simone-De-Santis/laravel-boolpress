@@ -64,3 +64,28 @@ Route::get('{any?}', function () {
 where('any', '.*'); -> è una espressione regolare che dice prendi any che può essere di qualsiasi tipo qualsiasi carattere e in qualsiasi quantità
 -->
 <!--  nella guest home blade andiamo a gestire la nostra classica pagina html dove inseriremo vue . importiamo css e js dalle classiche rotte di compilazione -->
+<!-- # problem compilazione js -->
+<!-- essendo che abbiamo diviso tutto tra back e font andiamo a dividere anche la compilazione di js  -->
+<!-- andiamo in resources / js e creiamo un nuovo file per il (front 'user') e in questo file inseriremo tutto lo script che andrà poi compilato da webpack -->
+<!-- in app (back) andremo a lasciare (per quello che serve a noi in questo momento ) solo l'importazione di bootstrap ' che usa js per le modali e altre utility e in front -->
+<!-- andiamo poi in webpack  e gli diciamo di compilare anche il nostro file front.js -->
+<!-- # cambiamo la predisposizione di vue  -->
+<!-- in resources/js/components prendiamo il file .vue e lo rinominiamo in App.vue-->
+<!-- andiamo poi ad impostare vue come il solito
+<script>
+    export default {
+        name:"App",
+    }
+</script>
+  -->
+<!-- in front.js andiamo a preparare lo scaffolding per la compilazione a componenti nel quale andiamo a importare il componente madre 'App'  -->
+<!--
+window.Vue = require("vue");
+import App from "./components/App.vue";
+const app = new Vue({
+    el: "#root",
+    render: h => h(App)
+});
+-->
+<!-- con questo codice andiamo a dire a JS di importare vue , importare il componente app vue, inizializza una nuova applicazione che parte dall'elemento con id #root e come rendere la home sarà il componente app   -->
+<!-- webpack compilerà il tutto e con npm run dev lo faremo compilare -->
