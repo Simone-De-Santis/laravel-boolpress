@@ -39,6 +39,7 @@
 <!-- inserendo le rotte nel group admin tutte le rotte erediteranno i valori inseriti precedentemente nelle specifiche del group -->
 <!-- ? CRUD POST  Admin (back and)-->
 <!-- # index  (R)-->
+<!-- andiamo a creare le pagine blade per le crud -->
 <!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
 <!-- Cominciamo con l'index nel controller e creiamo la pagina 'rotta presente nel view' in views/admin/index-->
 <!-- nel layout presente di base in laravel ui è gia caricato il link per js css ecc -->
