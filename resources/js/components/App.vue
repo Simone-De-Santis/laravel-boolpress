@@ -3,20 +3,24 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Benvenuti nel mio sito</div>
-
+                    <Header />
                     <div class="card-body">
                         Sito in costruzione
                     </div>
                 </div>
-                questa pagina è in  resource / js /components /app.vue
+                questa pagina è in resource / js /components /app.vue
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {
-        name:"App",
+// import del componente esterno 'header'
+import Header from "./Header.vue";
+export default {
+    name: "App",
+    components: {
+        Header
     }
+};
 </script>

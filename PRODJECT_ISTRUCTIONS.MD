@@ -53,7 +53,7 @@
 <!-- creiamo un file show dove andremo a descrivere il dettaglio del post  poi andiamo nel controller e passiamo il dettaglio del'articolo (id) all view-->
 <!-- in Laravel con la laravel dependency inception possiamo passare alle view direttamente il parametro del dettaglio senza andare a specificare il parametro tramite il quale ciò avviene -->
 
-<!-- * VUE -->
+<!-- ? VUE -->
 <!-- in questa applicazione gestiremo la parte admin da laravel e la parte user experience con vue  -->
 <!-- andiamo a creare in web.php una rotta di fallback cioè una rotta generiche ... una rotta che intercetta tutte le rotte che non possono entrare (per un motivo o per un altro ) nelle rotte create per l'admin o le auth
 Route::get('{any?}', function () {
@@ -92,3 +92,6 @@ const app = new Vue({
 <!-- potremo fare lo stesso con sass per  importare 2 file separati uno per il back(admin9 e uno per il front(guest)-->
 <!-- * Nella views gust  -->
 <!-- Dove andremo ad impostare il div con id root per vue andiamo ad inserire il template di html dove andremo a caricare il link per il css e le varie cdn se ne avremo bisogno e cosa importante nel body sarà presente solo il div con id root e in fine importiamo lo script 'front' dove abbiamo impostato la compilazione di vue  -->
+<!--* Vue components -->
+<!-- creiamo un componente esterno per importare l'header -->
+<!-- importiamo il componente in app -->
