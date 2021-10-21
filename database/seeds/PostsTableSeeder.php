@@ -5,6 +5,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Post;
 // import string per slugs 
 use Illuminate\Support\Str;
+// import faker
+use Faker\Generator as Faker;
 
 class PostsTableSeeder extends Seeder
 {
@@ -13,51 +15,19 @@ class PostsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        // ! 1 metodo
-        // inseriamo un array associativo dei dati di un post 
-        $posts = [
-            [
-                'title' => 'primo post',
-                'content' => 'contenuto post 1',
-                'image' => 'http://bla bla bal'
+        for ($i = 0; $i < 100; $i++) {
+            // instanziamo nuovo elemento 
+            $Post = new Post();
+            // tramite la docs di faker php vediamo i parametri da passare
+            $Post->title = $faker->words(5, true);
+            $Post->content = $faker->text(200);
+            $Post->image = $faker->imageUrl(360, 360);
 
-            ],   [
-                'title' => 'secondo post',
-                'content' => 'contenuto post 2',
-                'image' => 'http://bla bla bal'
-
-            ],   [
-                'title' => 'terzo post',
-                'content' => 'contenuto post 3',
-                'image' => 'http://bla bla bal'
-
-            ],   [
-                'title' => 'quarto post',
-                'content' => 'contenuto post 4',
-                'image' => 'http://bla bla bal'
-
-            ],   [
-                'title' => 'quinto post',
-                'content' => 'contenuto post 5',
-                'image' => 'http://bla bla bal'
-
-            ]
-        ];
-
-        //cicliamo sopra gli array inseritine creiamo un nuovo record 
-
-        foreach ($posts as $post) {
-            // instanziamo il nuovo post (bisogna importare il modello )
-            $newPost = new Post();
-            $newPost->title = $post['title'];
-            $newPost->content = $post['content'];
-            $newPost->image = $post['image'];
-
-            // importiamo string per usare il suo metodo della creazione dello slug
-            $newPost->slug = Str::slug($post['title'], '-');
-            $newPost->save();
+            $Post->slug = Str::slug($Post->title, '-');
+            // salviamo elemento nel db
+            $Post->save();
         }
     }
 }

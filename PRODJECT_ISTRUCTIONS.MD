@@ -153,3 +153,8 @@ const app = new Vue({
 <!-- ? FAKER -->
 <!-- in laravel possiamo creare dei dati fake ma plausibili per popolare il nostro db di dati verosimili per lo sviluppo  -->
 <!-- bisogna disinstallare il vecchio pacchetto di fzaninotto installato di serie con :' composer remove fzaninotto/faker' ed installare il nuovo con :'composer require fakerphp/faker' -->
+<!-- importiamo il 'modello faker' use Faker\Generator as Faker; e impostimao la funzione run come primo parametro dicendogli di usare la classe Faker e tutti i suoi metodi -->
+<!-- non avendo più un array di riferimento useremo un ciclo for per dire quante tuple creare per riempire i dati  -->
+<!-- passiamo i parametri prendendoli dalla docs di faker php  -->
+<!-- inseriamo il parametro str del metodo string per lo slug (lo inseriamo noi ) -->
+<!-- lanciamo il comando per il seed -->
