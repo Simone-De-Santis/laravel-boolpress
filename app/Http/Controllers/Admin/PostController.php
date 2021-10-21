@@ -16,8 +16,8 @@ class PostController extends Controller
     public function index()
     {
         //
-
-        $posts = Post::all();
+        // paginiamo i risultati 
+        $posts = Post::paginate(10);
         return view('admin.posts.index', compact('posts'));
     }
 

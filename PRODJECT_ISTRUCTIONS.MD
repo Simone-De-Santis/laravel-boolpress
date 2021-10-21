@@ -52,6 +52,9 @@
 <!--# Show (R)  -->
 <!-- creiamo un file show dove andremo a descrivere il dettaglio del post  poi andiamo nel controller e passiamo il dettaglio del'articolo (id) all view-->
 <!-- in Laravel con la laravel dependency inception possiamo passare alle view direttamente il parametro del dettaglio senza andare a specificare il parametro tramite il quale ciò avviene -->
+<!-- * pagination  -->
+<!-- in laravel possiamo paginare  i risultati semplicemente impostando al posto di all nel controller di riferimento paginate e tra parentisi impostare la relets dei risultati  -->
+<!-- dopo fatto questo nella pag della view di riferimento arriverà un parametro che noi possiamo prendere con  {{ $posts->links() }} per far apparire i link delle pagine dei post mancanti -->
 
 ||
 ||
