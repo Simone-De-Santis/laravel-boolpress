@@ -53,6 +53,45 @@
 <!-- creiamo un file show dove andremo a descrivere il dettaglio del post  poi andiamo nel controller e passiamo il dettaglio del'articolo (id) all view-->
 <!-- in Laravel con la laravel dependency inception possiamo passare alle view direttamente il parametro del dettaglio senza andare a specificare il parametro tramite il quale ciò avviene -->
 
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+||
+
 <!-- ? VUE -->
 <!-- in questa applicazione gestiremo la parte admin da laravel e la parte user experience con vue  -->
 <!-- andiamo a creare in web.php una rotta di fallback cioè una rotta generiche ... una rotta che intercetta tutte le rotte che non possono entrare (per un motivo o per un altro ) nelle rotte create per l'admin o le auth
@@ -98,3 +137,9 @@ const app = new Vue({
 <!-- passiamo parte del titolo dell'header con prop -->
 <!-- prepariamo il componente a ricevere le prop impostando in export e utilizzando la prop nel template -->
 <!-- nel componente madre passiamo la prop o direttamente nel componente(no bind) o passando una proprietà 'un array|| un oggetto'(bind = dinamico) presente in data -->
+
+<!-- ? Seeders -->
+<!-- i seeders  servono per popolare in automatico le tabelle -->
+<!-- possiamo creare tanti seeder quante sono le tabelle  -->
+<!-- con il comando php artisan make:seeder NomedellatabellaTableSeeder -->
+<!-- php artisan make:seeder PostsTableSeeder ---- avviato questo comando creato file in database/seeds-->
