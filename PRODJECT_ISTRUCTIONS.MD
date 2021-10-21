@@ -145,3 +145,11 @@ const app = new Vue({
 <!-- php artisan make:seeder PostsTableSeeder ---- avviato questo comando creato file in database/seeds-->
 <!-- nel file seeder/PostsTableSeeder creeremo la logica per la creazione dei record sul db (le tuple)-->
 <!-- possiamo partire da un un array associativo per i dati (in questo caso dati per la creazione dei nostri post) che conterranno title , content, image, slug  -->
+<!-- giriamo sul nostro array e instanziamo un nuovo Post assegniamo i valori in base alle colonne o a mano o con fill ( bisogna poi impostare i parametri fillable nel model ) -->
+<!-- una volta creato per avviare il seeder facciamo partire il comando : 'php artisan db:seed --class=PostsTableSeeder ' -->
+<!-- in DatabaseSeeder possiamo elencare tutti i nostri seeder e in una volta sola cliamarli tutti insieme con lo stesso comando di prima ma senza la --class -->
+<!-- # per vuotare tutto il db e resettare tutte le tuple di tutto il db usiamo php artisan migrate:refresh  -->
+
+<!-- ? FAKER -->
+<!-- in laravel possiamo creare dei dati fake ma plausibili per popolare il nostro db di dati verosimili per lo sviluppo  -->
+<!-- bisogna disinstallare il vecchio pacchetto di fzaninotto installato di serie con :' composer remove fzaninotto/faker' ed installare il nuovo con :'composer require fakerphp/faker' -->
