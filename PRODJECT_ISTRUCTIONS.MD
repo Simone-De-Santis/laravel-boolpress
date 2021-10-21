@@ -41,6 +41,7 @@
 <!-- # index  (R)-->
 <!-- andiamo a creare le pagine blade per le crud -->
 <!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
+<!-- possiamo inserire anche un order by  -->
 <!-- Cominciamo con l'index nel controller e creiamo la pagina 'rotta presente nel view' in views/admin/index-->
 <!-- nel layout presente di base in laravel ui è gia caricato il link per js css ecc -->
 <!-- ! laravel ui usa bootsrap 4 -->
