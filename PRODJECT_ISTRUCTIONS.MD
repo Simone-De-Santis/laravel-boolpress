@@ -61,6 +61,11 @@
 <!-- il pulsante delete non deve restituire una pagina e la chiamata che deve eseguire è la delete ma lo facciamo con un form ---- vai a delete per ulteriori dettagli  -->
 <!-- # CREATED (C) -->
 
+<!-- # DESTROY (D) -->
+<!-- nel post controller andiamo nella funzione destroy e impostiamo i parametri della dependence inception per prendere il post specifico , poi applichiamo al post la funzione delete e nel return facciamo un redirected all'index -->
+<!-- con la whit possiamo passare alla nuova index che è passata pre la funzione destroy una coppia di chiave valore con la quale andremo a creare un aller per l'avvenuta cancellazione ... questa coppia si chiama variabile di sessione che ha vita fino al prossimo refresh della pagina -->
+<!-- in index prendiamo la variabile di sessione con l' @if(session(e il cosa abbiamo passato dal controller )) -->
+
 ||
 ||
 ||
