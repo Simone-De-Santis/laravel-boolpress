@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <Header />
+                    <Header :title="title" />
                     <div class="card-body">
                         Sito in costruzione
                     </div>
@@ -19,6 +19,9 @@
 import Header from "./Header.vue";
 export default {
     name: "App",
+    data() {
+        return { title: " Blog di De Santis Simone" };
+    },
     components: {
         Header
     }

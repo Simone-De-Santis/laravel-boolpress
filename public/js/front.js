@@ -1929,6 +1929,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "App",
+  data: function data() {
+    return {
+      title: " Blog di De Santis Simone"
+    };
+  },
   components: {
     Header: _Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -1950,7 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Header"
+  name: "Header",
+  props: ["title"]
 });
 
 /***/ }),
@@ -37623,7 +37629,7 @@ var render = function() {
           "div",
           { staticClass: "card" },
           [
-            _c("Header"),
+            _c("Header", { attrs: { title: _vm.title } }),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _vm._v(
@@ -37663,7 +37669,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card-header" }, [
-    _vm._v("Benvenuti nel Blog di De Santis Simone")
+    _vm._v("Benvenuti sul " + _vm._s(_vm.title))
   ])
 }
 var staticRenderFns = []

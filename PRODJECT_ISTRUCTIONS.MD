@@ -93,5 +93,8 @@ const app = new Vue({
 <!-- * Nella views gust  -->
 <!-- Dove andremo ad impostare il div con id root per vue andiamo ad inserire il template di html dove andremo a caricare il link per il css e le varie cdn se ne avremo bisogno e cosa importante nel body sarà presente solo il div con id root e in fine importiamo lo script 'front' dove abbiamo impostato la compilazione di vue  -->
 <!--* Vue components -->
-<!-- creiamo un componente esterno per importare l'header -->
+<!-- creiamo un componente esterno per importare l'header  -->
 <!-- importiamo il componente in app -->
+<!-- passiamo parte del titolo dell'header con prop -->
+<!-- prepariamo il componente a ricevere le prop impostando in export e utilizzando la prop nel template -->
+<!-- nel componente madre passiamo la prop o direttamente nel componente(no bind) o passando una proprietà 'un array|| un oggetto'(bind = dinamico) presente in data -->
