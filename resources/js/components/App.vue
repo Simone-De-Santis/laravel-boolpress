@@ -9,7 +9,7 @@
                         Sito in costruzione
                     </div>
                 </div>
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                questa pagina è in  resource / js /components /app.vue
             </div>
         </div>
     </div>

@@ -87,6 +87,8 @@ const app = new Vue({
     render: h => h(App)
 });
 -->
-<!-- con questo codice andiamo a dire a JS di importare vue , importare il componente app vue, inizializza una nuova applicazione che parte dall'elemento con id #root e come rendere la home sarà il componente app   -->
+<!-- con questo codice andiamo a dire a JS di importare vue , importare il componente app vue, inizializza una nuova applicazione che parte dall'elemento con id #root e come render della home sarà il componente app   -->
 <!-- webpack compilerà il tutto e con npm run dev lo faremo compilare -->
-<!-- potremo fare lo stesso con sass per  importare 2 file separati-->
+<!-- potremo fare lo stesso con sass per  importare 2 file separati uno per il back(admin9 e uno per il front(guest)-->
+<!-- * Nella views gust  -->
+<!-- Dove andremo ad impostare il div con id root per vue andiamo ad inserire il template di html dove andremo a caricare il link per il css e le varie cdn se ne avremo bisogno e cosa importante nel body sarà presente solo il div con id root e in fine importiamo lo script 'front' dove abbiamo impostato la compilazione di vue  -->

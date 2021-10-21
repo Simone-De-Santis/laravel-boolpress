@@ -37614,7 +37614,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(
-            "\n            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n        "
+            "\n            questa pagina è in  resource / js /components /app.vue\n        "
           )
         ])
       ])
