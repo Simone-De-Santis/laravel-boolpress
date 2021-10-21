@@ -65,6 +65,10 @@
 <!-- nel post controller andiamo nella funzione destroy e impostiamo i parametri della dependence inception per prendere il post specifico , poi applichiamo al post la funzione delete e nel return facciamo un redirected all'index -->
 <!-- con la whit possiamo passare alla nuova index che è passata pre la funzione destroy una coppia di chiave valore con la quale andremo a creare un aller per l'avvenuta cancellazione ... questa coppia si chiama variabile di sessione che ha vita fino al prossimo refresh della pagina -->
 <!-- in index prendiamo la variabile di sessione con l' @if(session(e il cosa abbiamo passato dal controller )) -->
+<!-- * allert di conferma -->
+<!-- creiamo un allert di conferma per la cancellazione , nel layout deve essere specificato uno yeld(segnaposto) per inserire il nostro eventuiale script poi apriamo una sezione nella nostra index e apriamo il tago script -->
+<!-- creiamo la costante per prendere i bottoni e con la funzione 'document.querySelectorAll('')'     prendiamo tutti i btn elimina presenti in pagina (avremo usato getelementbyid se i FORM da prendere erano 1) e selezioniamo con i SELETTORI CSS LA CLASSE delete button -->
+<!-- con un ciclo andiamo ad attaccare a tutti i form di delete un eventListener per rimanere in attesa dello scatenarsi dell'evento submit del btn al suo interno e blocchiamo il flusso dell'evento del form con e.preventDefault poi con confirm attendiamo che l'utenti confermi o meno se conferma si riprende con il submit senno l'esecuzione rimarrà annullata -->
 
 ||
 ||
