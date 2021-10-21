@@ -143,3 +143,5 @@ const app = new Vue({
 <!-- possiamo creare tanti seeder quante sono le tabelle  -->
 <!-- con il comando php artisan make:seeder NomedellatabellaTableSeeder -->
 <!-- php artisan make:seeder PostsTableSeeder ---- avviato questo comando creato file in database/seeds-->
+<!-- nel file seeder/PostsTableSeeder creeremo la logica per la creazione dei record sul db (le tuple)-->
+<!-- possiamo partire da un un array associativo per i dati (in questo caso dati per la creazione dei nostri post) che conterranno title , content, image, slug  -->
