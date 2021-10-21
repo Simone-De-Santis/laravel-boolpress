@@ -55,6 +55,10 @@
 <!-- * pagination  -->
 <!-- in laravel possiamo paginare  i risultati semplicemente impostando al posto di all nel controller di riferimento paginate e tra parentisi impostare la relets dei risultati  -->
 <!-- dopo fatto questo nella pag della view di riferimento arriverà un parametro che noi possiamo prendere con  {{ $posts->links() }} per far apparire i link delle pagine dei post mancanti -->
+<!-- andiamo ad imposta le rotte nei pulsanti della index -->
+<!-- ! il punsante della cancellazione -->
+<!-- il pulsante delete non deve restituire una pagina e la chiamata che deve eseguire è la delete ma lo facciamo con un form ---- vai a delete per ulteriori dettagli  -->
+<!-- # CREATED (C) -->
 
 ||
 ||
