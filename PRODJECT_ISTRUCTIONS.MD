@@ -61,6 +61,9 @@
 <!-- il pulsante delete non deve restituire una pagina e la chiamata che deve eseguire è la delete ma lo facciamo con un form ---- vai a delete per ulteriori dettagli  -->
 <!-- # CREATED (C) -->
 <!-- visto che created e edit condividono lo stesso form ma con delle differenze per non entrare in un errore adiamo ad inizializzare una istanza vuota che in un secondo momento andremo a controllarne l'esistenza con la presenza o meno dell'id per visualizzare il form di creazione o modifica  -->
+<!-- nel form in blade ricordarsi di mettere il name nei vari input dando ad esso il nome del parametro che troveremo in tabella -->
+<!-- l'action porta allo store -->
+<!-- inserire il token di autentificazione -->
 <!-- # Edit () -->
 <!-- nel controller passiamo alla view tutta l'istanza del post perche avremo i campi pre fillati da modificare, utilizziamo la depended inception -->
 <!-- #Store -->
