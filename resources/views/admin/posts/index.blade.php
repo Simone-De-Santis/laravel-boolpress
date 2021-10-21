@@ -38,7 +38,7 @@
               <div class="d-flex justify-content-end">
                 <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary">Detail</a>
                 <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-warning ml-2">Edit</a>
-                <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST">
+                <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" class='delete-button'>
                   @csrf
                   @method('DELETE')
 
@@ -64,5 +64,19 @@
   </div>
 
 
+
+@endsection
+
+@section('scripts')
+  <script>
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    deleteButtons.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const conf = confirm('Are you sure you want to delete this post?');
+        if (conf) this.submit();
+      })
+    })
+  </script>
 
 @endsection

@@ -60,7 +60,16 @@
 <!-- ! il punsante della cancellazione -->
 <!-- il pulsante delete non deve restituire una pagina e la chiamata che deve eseguire è la delete ma lo facciamo con un form ---- vai a delete per ulteriori dettagli  -->
 <!-- # CREATED (C) -->
-
+<!-- visto che created e edit condividono lo stesso form ma con delle differenze per non entrare in un errore adiamo ad inizializzare una istanza vuota che in un secondo momento andremo a controllarne l'esistenza con la presenza o meno dell'id per visualizzare il form di creazione o modifica  -->
+<!-- # Edit () -->
+<!-- nel controller passiamo alla view tutta l'istanza del post perche avremo i campi pre fillati da modificare, utilizziamo la depended inception -->
+<!-- #Store -->
+<!-- nello store ci arrivano tutti i campi compilati dal form proveniente da create -->
+<!-- recuperiamo i dati  da request -->
+<!-- utilizziamo fill per comporre l'istanza aggiungiamo lo slug , salviamo , e facciamo un redirect allo show passando il post con compact -->
+<!-- # update -->
+<!-- nell' update ci arriva l'id del post ma andando ad usare la depended inception prendiamo tutta l'istanza-->
+<!-- prendiamo in $data i dati ricevuti da request aggiungiamo lo slag e facciamo l'update -->
 <!-- # DESTROY (D) -->
 <!-- nel post controller andiamo nella funzione destroy e impostiamo i parametri della dependence inception per prendere il post specifico , poi applichiamo al post la funzione delete e nel return facciamo un redirected all'index -->
 <!-- con la whit possiamo passare alla nuova index che è passata pre la funzione destroy una coppia di chiave valore con la quale andremo a creare un aller per l'avvenuta cancellazione ... questa coppia si chiama variabile di sessione che ha vita fino al prossimo refresh della pagina -->
