@@ -41,7 +41,7 @@
 <!-- # index  (R)-->
 <!-- andiamo a creare le pagine blade per le crud -->
 <!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
-<!-- possiamo inserire anche un order by  -->
+<!-- possiamo inserire anche un order by  e scrivere qui anche linguaggio sql facendo $post=DB::query('.............')-->
 <!-- Cominciamo con l'index nel controller e creiamo la pagina 'rotta presente nel view' in views/admin/index-->
 <!-- nel layout presente di base in laravel ui è gia caricato il link per js css ecc -->
 <!-- ! laravel ui usa bootsrap 4 -->
@@ -66,7 +66,13 @@
 <!-- l'action porta allo store -->
 <!-- inserire il token di autentificazione -->
 <!-- # Edit () -->
-<!-- nel controller passiamo alla view tutta l'istanza del post perche avremo i campi pre fillati da modificare, utilizziamo la depended inception -->
+<!-- nel controller passiamo alla view tutta l'istanza del post perché avremo i campi pre fillati da modificare, utilizziamo la depended inception -->
+<!-- essendo un form pre fillato andremo ad aggiungere il value all'input   -->
+<!-- andiamo ad unificare il form creando un include in resource ed includendo il'componente dove serve (create ed editi)'-->
+<!-- andiamo a modificare il form del post per renderlo universale sia per il create che per l'edit -->
+<!-- controlliamo l'esistenza del post passato tramite controller e andiamo ad impostare il metodo di output  -->
+<!-- per l'update avremo bisogno del method patch mentre per lo store andrà bene il method post -->
+
 <!-- #Store -->
 <!-- nello store ci arrivano tutti i campi compilati dal form proveniente da create -->
 <!-- recuperiamo i dati  da request -->

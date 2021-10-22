@@ -1,4 +1,13 @@
 @extends('layouts.app')
 @section('content')
-  <h1>pagina di edit</h1>
+
+  <div class="container">
+    <header class="d-flex justify-content-between align-items-center">
+      <h1>Edit Post</h1>
+      <a href="{{ route('admin.posts.index') }}" class="btn btn-secondary">Return</a>
+    </header>
+    <section id="form">
+      @include('includes.admin.posts.form')
+    </section>
+  </div>
 @endsection
