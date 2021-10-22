@@ -220,3 +220,4 @@ const app = new Vue({
 <!-- ? SHOW -->
 <!-- nella funzione show restituiamo il json di uno specifico post perciò inseriamo l'ID -->
 <!-- in route/api.php andiamo a definire la rotta dell'api show -->
+<!-- in post controller usiamo la dependency inception per prendere l'istanza del modello  -->
