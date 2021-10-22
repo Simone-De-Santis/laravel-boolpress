@@ -194,3 +194,10 @@ const app = new Vue({
 <!-- passiamo i parametri prendendoli dalla docs di faker php  -->
 <!-- inseriamo il parametro str del metodo string per lo slug (lo inseriamo noi ) -->
 <!-- lanciamo il comando per il seed -->
+
+<!-- ? validation -->
+<!-- le validazioni le facciamo nei campi di interazione con la persona fisica che utilizza l'applicativo percio nel nostro caso lo faremo dove ci sono i form ( in store e in update) -->
+<!-- prendiamo con $request i dati provenienti dal form e con il valore del campo di input facciamo le nostre validazioni  -->
+<!-- se non viene passata una validazione si vieni rendirizzati verso la stessa pagina da dove è partita kla richiesta ma con l'agiunta della errorsbag che andremo a leggere con $errors nella stessa pagina -->
+<!-- creiamo un if dove vedremo se c'è una proprietà nella pg con $errors e creiamo un allert per leggere gli errori  -->
+<!--  -->
