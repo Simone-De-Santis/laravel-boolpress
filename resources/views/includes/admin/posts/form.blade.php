@@ -1,6 +1,3 @@
-|
-|
-
 @if ($post->exists)
   <form method='POST' action="{{ route('admin.posts.update', $post->id) }}">
     @method('PATCH')
