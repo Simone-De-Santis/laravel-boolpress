@@ -1,13 +1,7 @@
 @extends('layouts.app')
 @section('content')
   <div class="container">
-    @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
-          <li>Compilation error</li>
-        </ul>
-      </div>
-    @endif
+    @include('includes.errors_allert')
     <div class="container">
       <header class="d-flex justify-content-between align-items-center">
         <h1>Edit Post</h1>
