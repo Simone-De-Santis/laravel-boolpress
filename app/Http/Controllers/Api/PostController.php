@@ -67,5 +67,13 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+        // $post=Post::findOrFail($id);
+        // $post->delete();
+
+        Post::destroy($id);
+
+        // non mi aspetto una risposta json ma una risposta ok con 204
+        return response(' ', 204);
+        // operazione andata a buon fino ma non ho niente da mostrarti 
     }
 }

@@ -221,3 +221,5 @@ const app = new Vue({
 <!-- nella funzione show restituiamo il json di uno specifico post perciò inseriamo l'ID -->
 <!-- in route/api.php andiamo a definire la rotta dell'api show -->
 <!-- in post controller usiamo la dependency inception per prendere l'istanza del modello  -->
+<!-- ? DESTROY-->
+<!-- nella destroy non mi aspetto di ritornare dietro un json ma uno status  Post::destroy($id);  return response(' ', 204); -->
