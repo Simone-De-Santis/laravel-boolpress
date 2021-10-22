@@ -37,7 +37,7 @@
 <!-- nel PostController agganciamo il modello creato precedentemete  use App\Models\Post -->
 <!-- andiamo a collegare tutte le rotte in web.php utilizzando Route::resource... per prendere tutte le rotte inserite nel controller relativo al post -->
 <!-- inserendo le rotte nel group admin tutte le rotte erediteranno i valori inseriti precedentemente nelle specifiche del group -->
-<!-- ? CRUD POST  Admin (back and)-->
+<!-- ? - 10 CRUD POST  Admin (back and)-->
 <!-- # index  (R)-->
 <!-- andiamo a creare le pagine blade per le crud -->
 <!-- specifichiamo in PostsController le rotte e creiamo le pagine di riferimento .  -->
@@ -88,6 +88,23 @@
 <!-- creiamo un allert di conferma per la cancellazione , nel layout deve essere specificato uno yeld(segnaposto) per inserire il nostro eventuiale script poi apriamo una sezione nella nostra index e apriamo il tago script -->
 <!-- creiamo la costante per prendere i bottoni e con la funzione 'document.querySelectorAll('')'     prendiamo tutti i btn elimina presenti in pagina (avremo usato getelementbyid se i FORM da prendere erano 1) e selezioniamo con i SELETTORI CSS LA CLASSE delete button -->
 <!-- con un ciclo andiamo ad attaccare a tutti i form di delete un eventListener per rimanere in attesa dello scatenarsi dell'evento submit del btn al suo interno e blocchiamo il flusso dell'evento del form con e.preventDefault poi con confirm attendiamo che l'utenti confermi o meno se conferma si riprende con il submit senno l'esecuzione rimarrà annullata -->
+
+<!-- ? -11 API -->
+<!-- all'interno di routs/api.php possiamo creare le nostre rotte api per esporre i nostri dati e vederli sia dalla nostra app che da altre api -->
+<!-- il processo rimane sempre lo stesso ... creiamo una rotta , creiamo un controller , nel controller leggo il modello , con eloquent prendo quello che mi serve e poi do una risposta-->
+<!-- # CRUD API -->
+<!-- creiamo un controller saparato in una carella a parte perciò eseguiamo il comando :'php artisan make:controller Api/PostController --api'  che ci creerà la cartella con un controller apposta per le api eliminando le funzioni che non ci servono -->
+<!-- creiamo un RouteGroup per evitare di mettere sempre api\Post controller e poi andiamo a definire il la funzione index nel controller api -->
+<!-- nel controller andiamo a definire il  modello del Post -->
+
+<!-- ? INDEX -->
+<!-- andiamo nella funzione index , prendiamo tutti i post con $posts = Post::all();   il suo risultato è una collection ma nella funzione return response()->json($posts) json si aspetta un array .... usando laravel questo problema si risolve in automatico  , per mandare piu dati dobbiamo mandare la risposta json con compact json(conpact('posts','frutta','verdura'))  -->
+<!-- ? SHOW -->
+<!-- nella funzione show restituiamo il json di uno specifico post perciò inseriamo l'ID -->
+<!-- in route/api.php andiamo a definire la rotta dell'api show -->
+<!-- in post controller usiamo la dependency inception per prendere l'istanza del modello  -->
+<!-- ? DESTROY-->
+<!-- nella destroy non mi aspetto di ritornare dietro un json ma uno status  Post::destroy($id);  return response(' ', 204); -->
 
 ||
 ||
@@ -172,6 +189,23 @@ const app = new Vue({
 <!-- passiamo parte del titolo dell'header con prop -->
 <!-- prepariamo il componente a ricevere le prop impostando in export e utilizzando la prop nel template -->
 <!-- nel componente madre passiamo la prop o direttamente nel componente(no bind) o passando una proprietà 'un array|| un oggetto'(bind = dinamico) presente in data -->
+<!-- # dopo le crud api -->
+<!-- creiamo un componente per mostrare la lista dei post nella home guest -->
+<!-- in data passiamo un array posts vuoto che andremo a riempire tramite una chiamata api che faremo nella sezione methods -->
+<!-- la chiamata api in vue la faremo con axios che è gia installato in laravel a noi basta importarlo nel componente che farà la chiamata , ma possiamo importare axios a livello globale importandolo in front.js che carica vue -->
+<!-- windows.axios = require("axios");    all'oggetto windows passiamo l'intera istanza di axios -->
+<!-- per usare la proprietà axios non serve specificare window.axios nei file js ma solo axios -->
+<!-- creiamo la funzione getPosts dove useremo axios per la chiamata prima prepariamo la Base uri per l'indice http e montiamo la chiamata, in catch troveremo gli errori che stamperemo con un consol log e in then la risposta della chiamata  -->
+<!-- una volta creata la funzione bisognerà chiamarla e in questo caso la faremo chiamare in automatico alla creazione della pagina mettendola in create( questa funzione si chiama Lifecycle methods  ) -->
+
+\|
+\|
+\|
+\|
+\|
+\|
+\|
+\|
 
 <!-- ? Seeders -->
 <!-- i seeders  servono per popolare in automatico le tabelle -->
@@ -206,20 +240,3 @@ const app = new Vue({
 <!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->
 <!-- andiamo nei campi del form ed aggiungiamo old per evitare che in caso di errore si refreschi il valore inserito precedentemente -->
 <!-- aggiungiamo l'errore sotto il campo oggetto dell'errore e stampiamo l'errore ... grazie a bootstrap usiamo le classi css e la logica per vedere se c'è un errore  @error('title')   @enderror  controlla se c'è un errore nel campo title   con la classe invalid-feedback(bootstrap) mettiamo un div che in caso venga scritta la classe is invalid 'il che vuol dire se ha trovato un errore' farà apparire il div nella quale scriveremo l'errore -->
-
-<!-- ? API -->
-<!-- all'interno di routs/api.php possiamo creare le nostre rotte api per esporre i nostri dati e vederli sia dalla nostra app che da altre api -->
-<!-- il processo rimane sempre lo stesso ... creiamo una rotta , creiamo un controller , nel controller leggo il modello , con eloquent prendo quello che mi serve e poi do una risposta-->
-<!-- # CRUD API -->
-<!-- creiamo un controller saparato in una carella a parte perciò eseguiamo il comando :'php artisan make:controller Api/PostController --api'  che ci creerà la cartella con un controller apposta per le api eliminando le funzioni che non ci servono -->
-<!-- creiamo un RouteGroup per evitare di mettere sempre api\Post controller e poi andiamo a definire il la funzione index nel controller api -->
-<!-- nel controller andiamo a definire il  modello del Post -->
-
-<!-- ? INDEX -->
-<!-- andiamo nella funzione index , prendiamo tutti i post con $posts = Post::all();   il suo risultato è una collection ma nella funzione return response()->json($posts) json si aspetta un array .... usando laravel questo problema si risolve in automatico  , per mandare piu dati dobbiamo mandare la risposta json con compact json(conpact('posts','frutta','verdura'))  -->
-<!-- ? SHOW -->
-<!-- nella funzione show restituiamo il json di uno specifico post perciò inseriamo l'ID -->
-<!-- in route/api.php andiamo a definire la rotta dell'api show -->
-<!-- in post controller usiamo la dependency inception per prendere l'istanza del modello  -->
-<!-- ? DESTROY-->
-<!-- nella destroy non mi aspetto di ritornare dietro un json ma uno status  Post::destroy($id);  return response(' ', 204); -->
