@@ -206,3 +206,8 @@ const app = new Vue({
 <!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->
 <!-- andiamo nei campi del form ed aggiungiamo old per evitare che in caso di errore si refreschi il valore inserito precedentemente -->
 <!-- aggiungiamo l'errore sotto il campo oggetto dell'errore e stampiamo l'errore ... grazie a bootstrap usiamo le classi css e la logica per vedere se c'è un errore  @error('title')   @enderror  controlla se c'è un errore nel campo title   con la classe invalid-feedback(bootstrap) mettiamo un div che in caso venga scritta la classe is invalid 'il che vuol dire se ha trovato un errore' farà apparire il div nella quale scriveremo l'errore -->
+
+<!-- ? API -->
+<!-- all'interno di routs/api.php possiamo creare le nostre rotte api per esporre i nostri dati e vederli sia dalla nostra app che da altre api -->
+<!-- il processo rimane sempre lo stesso ... creiamo una rotta , creiamo un controller , nel controller leggo il modello , con eloquent prendo quello che mi serve e poi do una risposta-->
+<!-- creiamo un controller saparato in una carella a parte perciò eseguiamo il comando :'php artisan make:controller Api/PostController --api'  che ci creerà la cartella con un controller apposta per le api eliminando le funzioni che non ci servono -->
