@@ -202,3 +202,6 @@ const app = new Vue({
 <!-- creiamo un if dove vedremo se c'è una proprietà nella pg con $errors e creiamo un allert per leggere gli errori  -->
 <!-- possiamo customize i messaggi di errore sia per tipo sia per tipo specifico in un dato input   -->
 <!-- apriamo un array di seguito alla validazione nel Post controller ' von i : possiamo prendere alcuni valori nel campo di appartenenza '-->
+<!-- in edit che abbiamo la situazione dove modificando i dati potremo avere la necessità di baypassare la validazione unique essendo che non modifichiamo obbligatoriamente un campo che dovrebbeessere unico  -->
+<!-- nella validazione lato controller update andremo a modificare la stringa del campo unique e creando un array andremo a dettare alcune regole per far saltare il controllo alla tuple con l'id che stiamo modificando -->
+<!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->

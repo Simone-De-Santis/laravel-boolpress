@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
@@ -100,7 +101,7 @@ class PostController extends Controller
         // validation
         $request->validate([
 
-            'title' => 'required|string|unique:posts|min:5',
+            'title' => ['required', 'string', Rule::unique('posts')->ignore($post->id), 'min:5'],
             'content' => 'required|string',
             'image' => 'string',
         ], [
