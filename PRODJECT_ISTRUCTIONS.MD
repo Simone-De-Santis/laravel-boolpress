@@ -210,4 +210,13 @@ const app = new Vue({
 <!-- ? API -->
 <!-- all'interno di routs/api.php possiamo creare le nostre rotte api per esporre i nostri dati e vederli sia dalla nostra app che da altre api -->
 <!-- il processo rimane sempre lo stesso ... creiamo una rotta , creiamo un controller , nel controller leggo il modello , con eloquent prendo quello che mi serve e poi do una risposta-->
+<!-- # CRUD API -->
 <!-- creiamo un controller saparato in una carella a parte perciò eseguiamo il comando :'php artisan make:controller Api/PostController --api'  che ci creerà la cartella con un controller apposta per le api eliminando le funzioni che non ci servono -->
+<!-- creiamo un RouteGroup per evitare di mettere sempre api\Post controller e poi andiamo a definire il la funzione index nel controller api -->
+<!-- nel controller andiamo a definire il  modello del Post -->
+
+<!-- ? INDEX -->
+<!-- andiamo nella funzione index , prendiamo tutti i post con $posts = Post::all();   il suo risultato è una collection ma nella funzione return response()->json($posts) json si aspetta un array .... usando laravel questo problema si risolve in automatico  , per mandare piu dati dobbiamo mandare la risposta json con compact json(conpact('posts','frutta','verdura'))  -->
+<!-- ? SHOW -->
+<!-- nella funzione show restituiamo il json di uno specifico post perciò inseriamo l'ID -->
+<!-- in route/api.php andiamo a definire la rotta dell'api show -->

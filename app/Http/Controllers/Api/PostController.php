@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// import model Post 
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -15,6 +17,10 @@ class PostController extends Controller
     public function index()
     {
         //
+        $posts = Post::all();
+        // eloquent restituisce sempre una collection 
+
+        return response()->json($posts);
     }
 
     /**
