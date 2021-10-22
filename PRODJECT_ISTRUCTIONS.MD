@@ -126,7 +126,6 @@
 ||
 ||
 ||
-||
 
 <!-- ? VUE -->
 <!-- in questa applicazione gestiremo la parte admin da laravel e la parte user experience con vue  -->
@@ -206,3 +205,4 @@ const app = new Vue({
 <!-- nella validazione lato controller update andremo a modificare la stringa del campo unique e creando un array andremo a dettare alcune regole per far saltare il controllo alla tuple con l'id che stiamo modificando -->
 <!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->
 <!-- andiamo nei campi del form ed aggiungiamo old per evitare che in caso di errore si refreschi il valore inserito precedentemente -->
+<!-- aggiungiamo l'errore sotto il campo oggetto dell'errore e stampiamo l'errore ... grazie a bootstrap usiamo le classi css e la logica per vedere se c'è un errore  @error('title')   @enderror  controlla se c'è un errore nel campo title   con la classe invalid-feedback(bootstrap) mettiamo un div che in caso venga scritta la classe is invalid 'il che vuol dire se ha trovato un errore' farà apparire il div nella quale scriveremo l'errore -->
