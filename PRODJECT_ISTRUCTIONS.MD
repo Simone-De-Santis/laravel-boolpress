@@ -205,3 +205,4 @@ const app = new Vue({
 <!-- in edit che abbiamo la situazione dove modificando i dati potremo avere la necessità di baypassare la validazione unique essendo che non modifichiamo obbligatoriamente un campo che dovrebbeessere unico  -->
 <!-- nella validazione lato controller update andremo a modificare la stringa del campo unique e creando un array andremo a dettare alcune regole per far saltare il controllo alla tuple con l'id che stiamo modificando -->
 <!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->
+<!-- andiamo nei campi del form ed aggiungiamo old per evitare che in caso di errore si refreschi il valore inserito precedentemente -->
