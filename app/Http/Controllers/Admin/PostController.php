@@ -42,7 +42,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //! fare validazione
+        // validation
+        $request->validate([
+
+            'title' => 'required|string|unique:posts|min:5',
+            'content' => 'required|string',
+            'image' => 'string',
+
+
+
+
+        ]);
 
         $data = request()->all();
         $post = new Post();
