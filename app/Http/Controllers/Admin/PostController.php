@@ -48,10 +48,11 @@ class PostController extends Controller
             'title' => 'required|string|unique:posts|min:5',
             'content' => 'required|string',
             'image' => 'string',
-
-
-
-
+        ], [
+            // generic costum message
+            'required' => 'Il campo :attribute è obligatorio',
+            // specific costum message
+            'title.unique' => 'Il titolo esiste già',
         ]);
 
         $data = request()->all();

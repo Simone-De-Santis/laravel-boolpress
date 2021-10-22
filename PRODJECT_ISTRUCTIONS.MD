@@ -200,4 +200,5 @@ const app = new Vue({
 <!-- prendiamo con $request i dati provenienti dal form e con il valore del campo di input facciamo le nostre validazioni  -->
 <!-- se non viene passata una validazione si vieni rendirizzati verso la stessa pagina da dove è partita kla richiesta ma con l'agiunta della errorsbag che andremo a leggere con $errors nella stessa pagina -->
 <!-- creiamo un if dove vedremo se c'è una proprietà nella pg con $errors e creiamo un allert per leggere gli errori  -->
-<!--  -->
+<!-- possiamo customize i messaggi di errore sia per tipo sia per tipo specifico in un dato input   -->
+<!-- apriamo un array di seguito alla validazione nel Post controller ' von i : possiamo prendere alcuni valori nel campo di appartenenza '-->
