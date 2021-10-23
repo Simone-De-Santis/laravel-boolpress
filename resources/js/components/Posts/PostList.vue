@@ -2,12 +2,21 @@
     <section id="post-list">
         <h2>I miei post</h2>
         <Loader v-if="isLoading" />
-        <div>
+        <div v-else>
             <Pagination
                 :lastPage="pagination.lastPage"
                 :currentPage="pagination.currentPage"
                 @onPageChange="changePage"
             />
+
+            <button
+                class="btn "
+                @click="togleOrder()"
+                :class="[order == 'desc' ? 'btn-primary' : 'btn-success']"
+            >
+                Asc/Desc
+            </button>
+
             <PostCard v-for="post in posts" :key="post.id" :post="post" />
             <!-- link pagination -->
             <Pagination
@@ -30,6 +39,7 @@ export default {
     data() {
         return {
             baseUri: "http://localhost:8000",
+            order: "desc",
             posts: [],
             // current page
             pagination: {},
@@ -42,7 +52,9 @@ export default {
         getPosts(page) {
             this.isLoading = true;
             axios
-                .get(`${this.baseUri}/api/posts?page=${page}`)
+                .get(
+                    `${this.baseUri}/api/posts?page=${page}&order=${this.order}`
+                )
                 .then(res => {
                     // this.posts = res.data.data;
                     // destructuring:
@@ -64,6 +76,15 @@ export default {
         },
         changePage(page) {
             this.getPosts(page);
+        },
+        togleOrder() {
+            if (this.order == "desc") {
+                this.order = "asc";
+                this.getPosts();
+            } else {
+                this.order = "desc";
+                this.getPosts();
+            }
         }
     },
     created() {

@@ -2117,6 +2117,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2130,6 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       baseUri: "http://localhost:8000",
+      order: "desc",
       posts: [],
       // current page
       pagination: {},
@@ -2143,7 +2153,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.isLoading = true;
-      axios.get("".concat(this.baseUri, "/api/posts?page=").concat(page)).then(function (res) {
+      axios.get("".concat(this.baseUri, "/api/posts?page=").concat(page, "&order=").concat(this.order)).then(function (res) {
         // this.posts = res.data.data;
         // destructuring:
         var _res$data = res.data,
@@ -2164,6 +2174,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     changePage: function changePage(page) {
       this.getPosts(page);
+    },
+    togleOrder: function togleOrder() {
+      if (this.order == "desc") {
+        this.order = "asc";
+        this.getPosts();
+      } else {
+        this.order = "desc";
+        this.getPosts();
+      }
     }
   },
   created: function created() {
@@ -38787,33 +38806,47 @@ var render = function() {
     [
       _c("h2", [_vm._v("I miei post")]),
       _vm._v(" "),
-      _vm.isLoading ? _c("Loader") : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c("Pagination", {
-            attrs: {
-              lastPage: _vm.pagination.lastPage,
-              currentPage: _vm.pagination.currentPage
-            },
-            on: { onPageChange: _vm.changePage }
-          }),
-          _vm._v(" "),
-          _vm._l(_vm.posts, function(post) {
-            return _c("PostCard", { key: post.id, attrs: { post: post } })
-          }),
-          _vm._v(" "),
-          _c("Pagination", {
-            attrs: {
-              lastPage: _vm.pagination.lastPage,
-              currentPage: _vm.pagination.currentPage
-            },
-            on: { onPageChange: _vm.changePage }
-          })
-        ],
-        2
-      )
+      _vm.isLoading
+        ? _c("Loader")
+        : _c(
+            "div",
+            [
+              _c("Pagination", {
+                attrs: {
+                  lastPage: _vm.pagination.lastPage,
+                  currentPage: _vm.pagination.currentPage
+                },
+                on: { onPageChange: _vm.changePage }
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn ",
+                  class: [_vm.order == "desc" ? "btn-primary" : "btn-success"],
+                  on: {
+                    click: function($event) {
+                      return _vm.togleOrder()
+                    }
+                  }
+                },
+                [_vm._v("\n            Asc/Desc\n        ")]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.posts, function(post) {
+                return _c("PostCard", { key: post.id, attrs: { post: post } })
+              }),
+              _vm._v(" "),
+              _c("Pagination", {
+                attrs: {
+                  lastPage: _vm.pagination.lastPage,
+                  currentPage: _vm.pagination.currentPage
+                },
+                on: { onPageChange: _vm.changePage }
+              })
+            ],
+            2
+          )
     ],
     1
   )

@@ -14,10 +14,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $posts = Post::orderBy('id', 'desc')->paginate(5);
+        //parametro order dinamico para
+        // prendiamo dalla query il parametro order e definiamo un default
+        $order = $request->query('order') ?? 'asc';
+        $posts = Post::orderBy('id', $order)->paginate(5);
         // eloquent restituisce sempre una collection 
 
         return response()->json($posts);
