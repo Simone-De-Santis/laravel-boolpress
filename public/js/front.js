@@ -38822,7 +38822,7 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "btn ",
+                  staticClass: "btn mb-3",
                   class: [_vm.order == "desc" ? "btn-primary" : "btn-success"],
                   on: {
                     click: function($event) {

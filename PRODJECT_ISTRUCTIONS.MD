@@ -228,6 +228,7 @@ const { data, current_page, last_page } = res.data; -->
 <!-- andremo ad agiungere alla chiamata il parametro order -->
 <!-- in post controller api / index all'orderby al posto di asc o desc mettiamo un parametro dinamico $order  prima andiamo a definire order che prenderemo dalla query con $request->query('order') ?? 'asc' e con il codiscing operator andremo a dare un default -->
 <!-- in post list nella chiamata andremo ad aggiungere un parametro order &order=${this.order} che in data andremo a definire dando un default  order: "desc", -->
+<!-- andiamo a creare un btn che con il metodo @click="togleOrder() chiamerà la funzione che cambiera asc in desc o viceversa e rifarà la chiamata poi blindando la classe e con il ternario faremo vedere o meno un colore in base al valore attuale di order -->
 
 \|
 \|

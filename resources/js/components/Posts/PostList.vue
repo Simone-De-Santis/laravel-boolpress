@@ -10,7 +10,7 @@
             />
 
             <button
-                class="btn "
+                class="btn mb-3"
                 @click="togleOrder()"
                 :class="[order == 'desc' ? 'btn-primary' : 'btn-success']"
             >
