@@ -223,6 +223,11 @@ const { data, current_page, last_page } = res.data; -->
 <!-- andiamo a creare un emit dal figlio al padre per andare a dire al padre che è sto premuto un bottone e deve fare qualcosa -->
 <!-- nel nostro caso facendo $emit('onPageChange', currentPage - 1) sul pulsante figlio emetemiamo un evento e passiamo dei parametri -->
 <!-- quando verrà scatenato l'evento il padre lo intercetterà e farà partire la funzione changePage che in methods chiamerà la funzione getposts che utilizzerà i dati passati con(page) -->
+<!-- ? order data api dinamici -->
+<!-- richiediamo in maniera dinamica l'ordine alla chiamata api   -->
+<!-- andremo ad agiungere alla chiamata il parametro order -->
+<!-- in post controller api / index all'orderby al posto di asc o desc mettiamo un parametro dinamico $order  prima andiamo a definire order che prenderemo dalla query con $request->query('order') ?? 'asc' e con il codiscing operator andremo a dare un default -->
+<!-- in post list nella chiamata andremo ad aggiungere un parametro order &order=${this.order} che in data andremo a definire dando un default  order: "desc", -->
 
 \|
 \|
