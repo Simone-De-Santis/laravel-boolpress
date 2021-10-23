@@ -7,18 +7,29 @@
             <!-- link pagination -->
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                    <li class="page-item " v-if="pagination.currentPage > 1">
+                    <li
+                        class="page-item "
+                        v-if="pagination.currentPage > 1"
+                        @click="getPosts(pagination.currentPage - 1)"
+                    >
                         <a class="page-link" tabindex="-1" aria-disabled="true"
                             >Previous</a
                         >
                     </li>
-                    <li class="page-item">
-                        <a class="page-link">1</a>
+                    <li
+                        v-for="i in pagination.lastPage"
+                        :key="i"
+                        class="page-item"
+                        :class="{ active: pagination.currentPage == i }"
+                        @click="getPosts(i)"
+                    >
+                        <a class="page-link">{{ i }}</a>
                     </li>
 
                     <li
                         class="page-item"
                         v-if="pagination.currentPage < pagination.lastPage"
+                        @click="getPosts(pagination.currentPage + 1)"
                     >
                         <a class="page-link">Next</a>
                     </li>
@@ -47,10 +58,10 @@ export default {
     },
     methods: {
         // funzione per la chiamata api
-        getPosts() {
+        getPosts(page) {
             this.isLoading = true;
             axios
-                .get(`${this.baseUri}/api/posts`)
+                .get(`${this.baseUri}/api/posts?page=${page}`)
                 .then(res => {
                     // this.posts = res.data.data;
                     // destructuring:
@@ -78,4 +89,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.page-item {
+    cursor: pointer;
+}
+</style>

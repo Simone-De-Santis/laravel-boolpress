@@ -215,6 +215,9 @@ const { data, current_page, last_page } = res.data; -->
 <!-- #inseriamo i link alle pagination -->
 <!-- prendiamo da bootstrap il modello della paginazione e lo andiamo a modificare -->
 <!-- avendo preso con il destructuring dal data anche pagina corrente e il numero totale di pagine possiamo gestire se far comparire o meno i pulsanti avanti e indietro della paginazione ciclando sopra con un vif e dicendo fai vedere il pulsante si la pagina corrente è maggiore di 1 (previous) o se la pagina corrente è minore dell valore dell'ultima pagina (next) -->
+<!-- nella chiamata api rendiamo il parametro della pagina dinamica passandolo dalla funzione get post (se non viene passato nessun valore la chiamata restituisce la pagina 1 ) così da poter rendere funzionanti i pulsanti previous e next i quali renderemo funzionanti agganciando un evento vue one-click che andrà ad aggiungere o togliere uno al data della chiamata e farà eseguire una nuova chiamata -->
+<!-- con un ciclo for andiamo a stampare i numeri delle pagine con i relativi link  -->
+<!-- impostiamo la classe active dinamica solo alla veridicità di una condizione se current.page = index del ciclo for -->
 
 \|
 \|
