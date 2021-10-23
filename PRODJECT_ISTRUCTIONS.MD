@@ -197,6 +197,10 @@ const app = new Vue({
 <!-- per usare la proprietà axios non serve specificare window.axios nei file js ma solo axios -->
 <!-- creiamo la funzione getPosts dove useremo axios per la chiamata prima prepariamo la Base uri per l'indice http e montiamo la chiamata, in catch troveremo gli errori che stamperemo con un consol log e in then la risposta della chiamata  -->
 <!-- una volta creata la funzione bisognerà chiamarla e in questo caso la faremo chiamare in automatico alla creazione della pagina mettendola in create( questa funzione si chiama Lifecycle methods  ) -->
+<!-- ora mettiamo i posts della chiamata nell'array vuoto messo precedentemente in data -->
+<!-- * creiamo un componente card  -->
+<!-- cicliamo sul componente per far creare tante card quante sono i post nel db e passiamo i dati del singolo post alla card per stamparlo tramite le prop -->
+<!-- creiamo nella crd un method per formattare la data, useremo il Date di js... js formatta i mesi a partire da zero perciò aggiungeremo 1-->
 
 \|
 \|
