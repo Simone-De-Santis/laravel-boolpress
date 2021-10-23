@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::paginate(5);
         // eloquent restituisce sempre una collection 
 
         return response()->json($posts);
