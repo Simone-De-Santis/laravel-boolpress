@@ -210,7 +210,11 @@ const app = new Vue({
 <!-- ? pagination vue api  -->
 <!-- senza la paginazione della api abbiamo un array sul quale giriamo per stampare la card ma con paginate ci viene restituito un array di informazioni con un data di elementi specifici che abbiamo richiesto in paginate -->
 <!-- per risolvere questo problema andiamo a modificare la ress.data in ress.data.data -->
-<!-- possiamo usare una nomenclatura che si chiama destructuring  al posto di this.posts = res.data.data; scriviamo const { data } = res.data;    this.posts = data;   questo sta per 'estraimi da res.data i data ma possiamo aggiungere altre variabili da estrarre come in questo caso la pagina corrente e l'ultima pagina rispettando però la nomenclatura restituita da laravel nella chiamata api che possiamo vedere da postman -->
+<!-- possiamo usare una nomenclatura che si chiama destructuring  al posto di this.posts = res.data.data; scriviamo const { data } = res.data;    this.posts = data;   questo sta per 'estraimi da res.data i data ma possiamo estrarre anche tutte le altre variabili  come in questo caso la pagina corrente e l'ultima pagina rispettando però la nomenclatura restituita da laravel nella chiamata api che possiamo vedere da postman
+const { data, current_page, last_page } = res.data; -->
+<!-- #inseriamo i link alle pagination -->
+<!-- prendiamo da bootstrap il modello della paginazione e lo andiamo a modificare -->
+<!-- avendo preso con il destructuring dal data anche pagina corrente e il numero totale di pagine possiamo gestire se far comparire o meno i pulsanti avanti e indietro della paginazione ciclando sopra con un vif e dicendo fai vedere il pulsante si la pagina corrente è maggiore di 1 (previous) o se la pagina corrente è minore dell valore dell'ultima pagina (next) -->
 
 \|
 \|

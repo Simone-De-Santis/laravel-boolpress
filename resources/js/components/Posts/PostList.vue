@@ -2,7 +2,29 @@
     <section id="post-list">
         <h2>I miei post</h2>
         <Loader v-if="isLoading" />
-        <PostCard v-else v-for="post in posts" :key="post.id" :post="post" />
+        <div v-else>
+            <PostCard v-for="post in posts" :key="post.id" :post="post" />
+            <!-- link pagination -->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item " v-if="pagination.currentPage > 1">
+                        <a class="page-link" tabindex="-1" aria-disabled="true"
+                            >Previous</a
+                        >
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link">1</a>
+                    </li>
+
+                    <li
+                        class="page-item"
+                        v-if="pagination.currentPage < pagination.lastPage"
+                    >
+                        <a class="page-link">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </section>
 </template>
 
@@ -17,6 +39,8 @@ export default {
         return {
             baseUri: "http://localhost:8000",
             posts: [],
+            // current page
+            pagination: {},
             // impostiamo il loader
             isLoading: false
         };
@@ -30,8 +54,12 @@ export default {
                 .then(res => {
                     // this.posts = res.data.data;
                     // destructuring:
-                    const { data } = res.data;
+                    const { data, current_page, last_page } = res.data;
                     this.posts = data;
+                    this.pagination = {
+                        currentPage: current_page,
+                        lastPage: last_page
+                    };
 
                     this.isLoading = false;
                 })

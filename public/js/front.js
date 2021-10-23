@@ -2054,6 +2054,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2066,6 +2088,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       baseUri: "http://localhost:8000",
       posts: [],
+      // current page
+      pagination: {},
       // impostiamo il loader
       isLoading: false
     };
@@ -2079,8 +2103,15 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("".concat(this.baseUri, "/api/posts")).then(function (res) {
         // this.posts = res.data.data;
         // destructuring:
-        var data = res.data.data;
+        var _res$data = res.data,
+            data = _res$data.data,
+            current_page = _res$data.current_page,
+            last_page = _res$data.last_page;
         _this.posts = data;
+        _this.pagination = {
+          currentPage: current_page,
+          lastPage: last_page
+        };
         _this.isLoading = false;
       })["catch"](function (err) {
         console.log(err);
@@ -38576,11 +38607,57 @@ var render = function() {
       _vm._v(" "),
       _vm.isLoading
         ? _c("Loader")
-        : _vm._l(_vm.posts, function(post) {
-            return _c("PostCard", { key: post.id, attrs: { post: post } })
-          })
+        : _c(
+            "div",
+            [
+              _vm._l(_vm.posts, function(post) {
+                return _c("PostCard", { key: post.id, attrs: { post: post } })
+              }),
+              _vm._v(" "),
+              _c(
+                "nav",
+                { attrs: { "aria-label": "Page navigation example" } },
+                [
+                  _c(
+                    "ul",
+                    { staticClass: "pagination justify-content-center" },
+                    [
+                      _vm.pagination.currentPage > 1
+                        ? _c("li", { staticClass: "page-item " }, [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "page-link",
+                                attrs: {
+                                  tabindex: "-1",
+                                  "aria-disabled": "true"
+                                }
+                              },
+                              [_vm._v("Previous")]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("li", { staticClass: "page-item" }, [
+                        _c("a", { staticClass: "page-link" }, [_vm._v("1")])
+                      ]),
+                      _vm._v(" "),
+                      _vm.pagination.currentPage < _vm.pagination.lastPage
+                        ? _c("li", { staticClass: "page-item" }, [
+                            _c("a", { staticClass: "page-link" }, [
+                              _vm._v("Next")
+                            ])
+                          ])
+                        : _vm._e()
+                    ]
+                  )
+                ]
+              )
+            ],
+            2
+          )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
