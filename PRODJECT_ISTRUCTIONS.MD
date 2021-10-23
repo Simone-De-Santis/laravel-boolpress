@@ -203,6 +203,7 @@ const app = new Vue({
 <!-- creiamo nella crd un method per formattare la data, useremo il Date di js... js formatta i mesi a partire da zero perciò aggiungeremo 1-->
 <!-- ? vue loading -->
 <!-- impostiamo un loading fino a quando la pagina non ha caricato tutti i post da mostrare -->
+<!-- impostiamo il parametro loading in false di defaulter e lo mettiamo in true al momento dell'avvio della chiamata -->
 
 \|
 \|
