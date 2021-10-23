@@ -2038,7 +2038,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       baseUri: "http://localhost:8000",
-      posts: []
+      posts: [],
+      // impostiamo il loader
+      isLoading: false
     };
   },
   methods: {
@@ -2046,10 +2048,14 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts() {
       var _this = this;
 
+      this.isLoading = true;
       axios.get("".concat(this.baseUri, "/api/posts")).then(function (res) {
         _this.posts = res.data;
+        _this.isLoading = false;
       })["catch"](function (err) {
         console.log(err);
+      }).then(function () {
+        _this.isLoading = false;
       });
     }
   },

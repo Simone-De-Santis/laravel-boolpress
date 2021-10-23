@@ -13,19 +13,26 @@ export default {
     data() {
         return {
             baseUri: "http://localhost:8000",
-            posts: []
+            posts: [],
+            // impostiamo il loader
+            isLoading: false
         };
     },
     methods: {
         // funzione per la chiamata api
         getPosts() {
+            this.isLoading = true;
             axios
                 .get(`${this.baseUri}/api/posts`)
                 .then(res => {
                     this.posts = res.data;
+                    this.isLoading = false;
                 })
                 .catch(err => {
                     console.log(err);
+                })
+                .then(() => {
+                    this.isLoading = false;
                 });
         }
     },
