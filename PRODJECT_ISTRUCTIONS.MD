@@ -210,6 +210,7 @@ const app = new Vue({
 <!-- ? pagination vue api  -->
 <!-- senza la paginazione della api abbiamo un array sul quale giriamo per stampare la card ma con paginate ci viene restituito un array di informazioni con un data di elementi specifici che abbiamo richiesto in paginate -->
 <!-- per risolvere questo problema andiamo a modificare la ress.data in ress.data.data -->
+<!-- possiamo usare una nomenclatura che si chiama destructuring  al posto di this.posts = res.data.data; scriviamo const { data } = res.data;    this.posts = data;   questo sta per 'estraimi da res.data i data ma possiamo aggiungere altre variabili da estrarre come in questo caso la pagina corrente e l'ultima pagina rispettando però la nomenclatura restituita da laravel nella chiamata api che possiamo vedere da postman -->
 
 \|
 \|

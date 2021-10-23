@@ -28,7 +28,11 @@ export default {
             axios
                 .get(`${this.baseUri}/api/posts`)
                 .then(res => {
-                    this.posts = res.data.data;
+                    // this.posts = res.data.data;
+                    // destructuring:
+                    const { data } = res.data;
+                    this.posts = data;
+
                     this.isLoading = false;
                 })
                 .catch(err => {

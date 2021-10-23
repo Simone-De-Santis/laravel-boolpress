@@ -2077,7 +2077,10 @@ __webpack_require__.r(__webpack_exports__);
 
       this.isLoading = true;
       axios.get("".concat(this.baseUri, "/api/posts")).then(function (res) {
-        _this.posts = res.data.data;
+        // this.posts = res.data.data;
+        // destructuring:
+        var data = res.data.data;
+        _this.posts = data;
         _this.isLoading = false;
       })["catch"](function (err) {
         console.log(err);
