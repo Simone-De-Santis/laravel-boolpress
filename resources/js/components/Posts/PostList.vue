@@ -1,15 +1,18 @@
 <template>
     <section id="post-list">
         <h2>I miei post</h2>
-        <PostCard v-for="post in posts" :key="post.id" :post="post" />
+        <Loader v-if="isLoading" />
+        <PostCard v-else v-for="post in posts" :key="post.id" :post="post" />
     </section>
 </template>
 
 <script>
 import PostCard from "./PostCard";
+import Loader from "../Loader";
+
 export default {
     name: "PostList",
-    components: { PostCard },
+    components: { PostCard, Loader },
     data() {
         return {
             baseUri: "http://localhost:8000",

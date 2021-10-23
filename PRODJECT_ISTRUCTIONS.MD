@@ -203,7 +203,13 @@ const app = new Vue({
 <!-- creiamo nella crd un method per formattare la data, useremo il Date di js... js formatta i mesi a partire da zero perciò aggiungeremo 1-->
 <!-- ? vue loading -->
 <!-- impostiamo un loading fino a quando la pagina non ha caricato tutti i post da mostrare -->
-<!-- impostiamo il parametro loading in false di defaulter e lo mettiamo in true al momento dell'avvio della chiamata -->
+<!-- impostiamo in PostList che è colui che si occupa della chiamata il parametro loading in false di defaulter e lo settiamo  in true al momento dell'avvio della chiamata e false alla fine e gestiamo l'errore -->
+<!-- creiamo un componente a parte per il loader e lo mettiamo nei componenti generali di vue -->
+<!-- usiamo lo spinner di bootstrap 4 -->
+<!-- una volta incorporato il componente facciamo su un v-if che si attiva solo nella partenza della chiamata e si elimina alla conclusione -->
+<!-- ? pagination vue api  -->
+<!-- senza la paginazione della api abbiamo un array sul quale giriamo per stampare la card ma con paginate ci viene restituito un array di informazioni con un data di elementi specifici che abbiamo richiesto in paginate -->
+<!-- per risolvere questo problema andiamo a modificare la ress.data in ress.data.data -->
 
 \|
 \|
