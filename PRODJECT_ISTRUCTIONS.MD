@@ -218,6 +218,11 @@ const { data, current_page, last_page } = res.data; -->
 <!-- nella chiamata api rendiamo il parametro della pagina dinamica passandolo dalla funzione get post (se non viene passato nessun valore la chiamata restituisce la pagina 1 ) così da poter rendere funzionanti i pulsanti previous e next i quali renderemo funzionanti agganciando un evento vue one-click che andrà ad aggiungere o togliere uno al data della chiamata e farà eseguire una nuova chiamata -->
 <!-- con un ciclo for andiamo a stampare i numeri delle pagine con i relativi link  -->
 <!-- impostiamo la classe active dinamica solo alla veridicità di una condizione se current.page = index del ciclo for -->
+<!-- visto che avremo un pagination sia sopra che sotto i post creiamo un componente e importiamolo  -->
+<!-- #emit da pagination a postList.vue -->
+<!-- andiamo a creare un emit dal figlio al padre per andare a dire al padre che è sto premuto un bottone e deve fare qualcosa -->
+<!-- nel nostro caso facendo $emit('onPageChange', currentPage - 1) sul pulsante figlio emetemiamo un evento e passiamo dei parametri -->
+<!-- quando verrà scatenato l'evento il padre lo intercetterà e farà partire la funzione changePage che in methods chiamerà la funzione getposts che utilizzerà i dati passati con(page) -->
 
 \|
 \|
