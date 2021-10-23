@@ -2001,7 +2001,7 @@ __webpack_require__.r(__webpack_exports__);
       var postDate = new Date(date);
       var day = postDate.getDay();
       var month = postDate.getMonth() + 1;
-      var year = postDate.getFullYear(); // add 0 davanti alla data
+      var year = postDate.getFullYear(); // add 0 davanti alla data se inferiore di 10
 
       if (day < 10) day = "0" + day;
       if (month < 10) month = "0" + month;

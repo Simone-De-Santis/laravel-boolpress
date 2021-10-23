@@ -201,6 +201,8 @@ const app = new Vue({
 <!-- * creiamo un componente card  -->
 <!-- cicliamo sul componente per far creare tante card quante sono i post nel db e passiamo i dati del singolo post alla card per stamparlo tramite le prop -->
 <!-- creiamo nella crd un method per formattare la data, useremo il Date di js... js formatta i mesi a partire da zero perciò aggiungeremo 1-->
+<!-- ? vue loading -->
+<!-- impostiamo un loading fino a quando la pagina non ha caricato tutti i post da mostrare -->
 
 \|
 \|

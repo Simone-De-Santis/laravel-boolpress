@@ -34,7 +34,7 @@ export default {
             let month = postDate.getMonth() + 1;
             const year = postDate.getFullYear();
 
-            // add 0 davanti alla data
+            // add 0 davanti alla data se inferiore di 10
             if (day < 10) day = "0" + day;
             if (month < 10) month = "0" + month;
 
