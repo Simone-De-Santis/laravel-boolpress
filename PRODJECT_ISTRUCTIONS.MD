@@ -128,6 +128,7 @@
 <!-- eliminiamo il vincolo inserendo il nome che viene composto direttamente da laravel in questo modo : nome tabella + _ (posts_) , nome colonna +_ (category_id), tipo di vincolo (foreign) = $table->dropForeignKey('posts_category_id_foreign'); -->
 <!-- eliminiamo la colonna con $table->dropColumn('category_id') -->
 <!-- lanciamo la migrazione php artisan migrate -->
+<!-- ?relazione model -->
 
 ||
 ||

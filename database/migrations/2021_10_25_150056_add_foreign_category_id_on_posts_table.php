@@ -14,10 +14,13 @@ class AddForeignCategoryIdOnPostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //Definizione della colonna 
-            $table->unsignedBigInteger('category_id')->after('id')->nullable();
-            // definiamo il vincolo (foreing key)
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+            //# Definizione della colonna 
+            // $table->unsignedBigInteger('category_id')->after('id')->nullable();
+            //# definiamo il vincolo (foreing key)
+            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+
+            // * alternative
+            $table->foreignId('category_id')->after('id')->nullable()->onDelete('set null')->constrained();
         });
     }
 
@@ -30,7 +33,7 @@ class AddForeignCategoryIdOnPostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //eliminiamo il vincolo (foreing key)
-            $table->dropForeignKey('posts_category_id_foreign');
+            $table->dropForeign('posts_category_id_foreign');
             // eliminiamo la colonna 
             $table->dropColumn('category_id');
         });
