@@ -146,6 +146,7 @@ category _> post
 <!-- dopo aver premuto il pulsante salva si passa in store dove dovremo andare ad aggiungere la colonna categories nella cartella dei dati da fillare -->
 <!-- validiamo la category senza value(nessuna categoria)
  'category_id' => 'nullable|exists:categories,id' controlla se il valore inserito è nella tabella categories, colonna id altrimenti metti null -->
+ <!-- NELLO SHOW GESTIAMO IL SENZA CATEGORIA CON UN IF -->
 
 ||
 ||

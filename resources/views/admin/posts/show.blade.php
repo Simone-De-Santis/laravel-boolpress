@@ -3,6 +3,11 @@
 @section('content')
   <div class="container">
     <h1>{{ $post->title }}</h1>
+    <p>Category :@if ($post->category) {{ $post->category->name }}@else Not a Category
+
+
+      @endif
+    </p>
     <p>{{ $post->content }}</p>
     <address>creato il :{{ $post->getFormattedDate('created_at') }}</address>
     <address>
