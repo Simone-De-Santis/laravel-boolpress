@@ -110,6 +110,8 @@
 <!-- andiamo a creare le categorie  -->
 <!-- creiamo sia il modello della categoria che la migration con il comando php artisan make:model Models/Category -m -->
 <!-- laravel riconosce il plurale delle lettere che finiscono con la y mettendo ies per il plurale  -->
+<!-- definiamo le funzioni up e down (role back) delle categorie -->
+<!-- poi lanciamo al migration php artisan migrate -->
 
 ||
 ||
