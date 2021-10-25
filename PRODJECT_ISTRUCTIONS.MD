@@ -106,6 +106,11 @@
 <!-- ? DESTROY-->
 <!-- nella destroy non mi aspetto di ritornare dietro un json ma uno status  Post::destroy($id);  return response(' ', 204); -->
 
+<!-- % category -->
+<!-- andiamo a creare le categorie  -->
+<!-- creiamo sia il modello della categoria che la migration con il comando php artisan make:model Models/Category -m -->
+<!-- laravel riconosce il plurale delle lettere che finiscono con la y mettendo ies per il plurale  -->
+
 ||
 ||
 ||
