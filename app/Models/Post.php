@@ -14,4 +14,9 @@ class Post extends Model
     {
         return Carbon::create($this->$column)->format($format);
     }
+    // funzione per il collegamento della relazione con category
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

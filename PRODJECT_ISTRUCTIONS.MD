@@ -129,6 +129,11 @@
 <!-- eliminiamo la colonna con $table->dropColumn('category_id') -->
 <!-- lanciamo la migrazione php artisan migrate -->
 <!-- ?relazione model -->
+<!-- nei modelli di post e category andiamo a creare le funzioni per le relazioni
+post->category
+public function category(){return $this->belongsTo('App\Models\Category'); }
+category _> post
+  public function Posts(){ return $this->hasMany('App\Models\Post'); } -->
 
 ||
 ||
