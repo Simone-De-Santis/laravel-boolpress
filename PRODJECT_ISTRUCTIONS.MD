@@ -113,7 +113,21 @@
 <!-- definiamo le funzioni up e down (role back) delle categorie -->
 <!-- poi lanciamo al migration php artisan migrate -->
 <!-- creiamo un seeder per riempire il db delle category con il comando php artisan make:seeder CategoriesTableSeeder -->
-<!--  -->
+<!-- aggiungiamo la table al DatabaseSeeder.php cosi in caso di refresh verrà fatto tutto in automatico insieme ai post  -->
+<!-- lanciamo il comando php artisan db:seed --class=CategoriesTableSeeder per caricare solo le category nel db -->
+<!-- % relazione category post -->
+<!-- creiamo una relazione tra la tabella category e i post  -->
+<!-- in questo caso sarà una relazione uno(category) a molti(post)  -->
+<!-- perciò la principale sarà category e la foren key la prenderà la secondaria che sarà post -->
+<!-- ?mod table -->
+<!-- dobbiamo inserire nella tabella del modello dipendente la colonna della foren key riferita all'id della dominante (category_id) , per aggiungere la colonna dobbiamo fare una migration . creiamo la migration : php artisan make:migration add_foreign_category_id_on_posts_table --table=posts -->
+<!-- nella migration della tabella POSTS definiamo la colonna (solo la colonna non di cosa si occupa ) $table->unsignedBigInteger('category_id')->after('id')->nullable();     la agganceremo alla colonna category id , inseriremo questa colonna dopo la colonna id . e questa colonna sarà nullable (non obligatoria ) cosi potremo creare post senza categorie e non rischieremo di rompere tutto visto che già esistono post che non avevano questa colonna inserita precedentemente -->
+<!-- specifichiamo che la colonna è una foreign key category_id che fa riferimento alla colonna id della tabella categories e che se viene eliminata una categoria non viene eliminato il post ma questa fk viene settata su null  $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null')  -->
+
+<!-- dobbiamo inserire le specifiche per il rol back  -->
+<!-- eliminiamo il vincolo inserendo il nome che viene composto direttamente da laravel in questo modo : nome tabella + _ (posts_) , nome colonna +_ (category_id), tipo di vincolo (foreign) = $table->dropForeignKey('posts_category_id_foreign'); -->
+<!-- eliminiamo la colonna con $table->dropColumn('category_id') -->
+<!-- lanciamo la migrazione php artisan migrate -->
 
 ||
 ||
