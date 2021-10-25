@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
 use App\Http\Controllers\Controller;
+// IMPORT MODEL CATEGORIES
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -32,7 +34,8 @@ class PostController extends Controller
     {
         //dipendenza vuota per evitare un errore nel form condiviso con edit
         $post = new Post();
-        return view('admin.posts.create', compact('post'));
+        $categories = Category::all();
+        return view('admin.posts.create', compact('post', 'categories'));
     }
 
     /**
@@ -49,6 +52,7 @@ class PostController extends Controller
             'title' => 'required|string|unique:posts|min:5',
             'content' => 'required|string',
             'image' => 'string',
+            'category_id' => 'nullable|exists:categories,id'
         ], [
             // generic costum message
             'required' => 'Il campo :attribute è obligatorio',

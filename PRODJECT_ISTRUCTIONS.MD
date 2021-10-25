@@ -116,6 +116,7 @@
 <!-- aggiungiamo la table al DatabaseSeeder.php cosi in caso di refresh verrà fatto tutto in automatico insieme ai post  -->
 <!-- lanciamo il comando php artisan db:seed --class=CategoriesTableSeeder per caricare solo le category nel db -->
 <!-- % relazione category post -->
+<!-- # in questa situazione diremo albitrariamente che un post può avere solo una categoria poi la cambieremo -->
 <!-- creiamo una relazione tra la tabella category e i post  -->
 <!-- in questo caso sarà una relazione uno(category) a molti(post)  -->
 <!-- perciò la principale sarà category e la foren key la prenderà la secondaria che sarà post -->
@@ -134,6 +135,17 @@ post->category
 public function category(){return $this->belongsTo('App\Models\Category'); }
 category _> post
   public function Posts(){ return $this->hasMany('App\Models\Post'); } -->
+
+<!-- inserite tutte le varie relazioni lato db e lato model andiamo a modificare il form per inserire la category nell' edit e nel create -->
+<!-- ?change form -->
+<!-- inseriamo una selected e modifichiamo id e inseriamo il name per mandare i dati nel db , lo chiameremo perciò con il nome della tabella  -->
+<!-- dall'Admin post controller ci passeremo le categorie presenti nel db per creare le option della select nel form -->
+<!-- nel post controller (admin) passiamo il modello category e poi   lo passiamo nel compact di create -->
+<!-- ora nel form arrivano i dati relativi a categories -->
+<!-- cicliamo su questi dati e stampiamo il nome e come valore dobbiamo restituire l'id -->
+<!-- dopo aver premuto il pulsante salva si passa in store dove dovremo andare ad aggiungere la colonna categories nella cartella dei dati da fillare -->
+<!-- validiamo la category senza value(nessuna categoria)
+ 'category_id' => 'nullable|exists:categories,id' controlla se il valore inserito è nella tabella categories, colonna id altrimenti metti null -->
 
 ||
 ||
