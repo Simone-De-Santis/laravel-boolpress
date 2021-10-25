@@ -112,6 +112,8 @@
 <!-- laravel riconosce il plurale delle lettere che finiscono con la y mettendo ies per il plurale  -->
 <!-- definiamo le funzioni up e down (role back) delle categorie -->
 <!-- poi lanciamo al migration php artisan migrate -->
+<!-- creiamo un seeder per riempire il db delle category con il comando php artisan make:seeder CategoriesTableSeeder -->
+<!--  -->
 
 ||
 ||
