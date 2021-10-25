@@ -228,7 +228,7 @@ const { data, current_page, last_page } = res.data; -->
 <!-- andremo ad agiungere alla chiamata il parametro order -->
 <!-- in post controller api / index all'orderby al posto di asc o desc mettiamo un parametro dinamico $order  prima andiamo a definire order che prenderemo dalla query con $request->query('order') ?? 'asc' e con il codiscing operator andremo a dare un default -->
 <!-- in post list nella chiamata andremo ad aggiungere un parametro order &order=${this.order} che in data andremo a definire dando un default  order: "desc", -->
-<!-- andiamo a creare un btn che con il metodo @click="togleOrder() chiamerà la funzione che cambiera asc in desc o viceversa e rifarà la chiamata poi blindando la classe e con il ternario faremo vedere o meno un colore in base al valore attuale di order -->
+<!-- andiamo a creare un btn che con il metodo @click="toggleOrder() chiamerà la funzione che cambiera asc in desc o viceversa e rifarà la chiamata poi blindando la classe e con il ternario faremo vedere o meno un colore in base al valore attuale di order -->
 
 \|
 \|
@@ -272,3 +272,36 @@ const { data, current_page, last_page } = res.data; -->
 <!-- sostituiamo la stringa del tipo di controllo inserendo la classe Rule:: (Rule::unique('posts')->ignore($post->id))  Rule ovviamente va importata nel controller-->
 <!-- andiamo nei campi del form ed aggiungiamo old per evitare che in caso di errore si refreschi il valore inserito precedentemente -->
 <!-- aggiungiamo l'errore sotto il campo oggetto dell'errore e stampiamo l'errore ... grazie a bootstrap usiamo le classi css e la logica per vedere se c'è un errore  @error('title')   @enderror  controlla se c'è un errore nel campo title   con la classe invalid-feedback(bootstrap) mettiamo un div che in caso venga scritta la classe is invalid 'il che vuol dire se ha trovato un errore' farà apparire il div nella quale scriveremo l'errore -->
+
+\|
+\|
+\|
+\|
+\|
+\|
+\|
+\|
+
+<!-- % RELAZIONI TRA LE TABELLE -->
+<!-- dobbiamo andare a creare una relazione tra le varie tabelle  -->
+<!-- le relazioni tra tabelle si hanno unendo in una tabella una foreign key dell'altra -->
+<!-- !1 creare la colonna nel db  -->
+<!-- !2 specificare la relazione nel modello   -->
+<!-- #relazione uno a molti -->
+<!-- one to many: nel nostro caso nella relazione tra post e utenti un utente avrà molti post ma i post un solo utente perciò è una relazione uno(utente || forte'che può esistere da solo') a molti(post ||debole 'esiste solo se legato con un utente')
+, sia l'utente che i post avranno una loro tabella con i vari dati e gli id , per creare una relazione andremo a relazionare l'id dell'utente ai molti id della tabella che di conseguenza prenderà la foren key (l'id principale'del creatore' della dipendenza ) del'utente -->
+<!-- per agiungere una foreign key ad una tabella già esistente abbiamo bisogno di una migration '-->
+<!-- con laravel andremo a creare una migration con una colonna di tipo $table->unsignedBigInteger('user_id') e poi creeremo la relazione (VINCOLO)  l'id , $table->foreign('user_id')->reference('id)->on('user_id') che si traduce in "all'interno di questa migration che fa riferimento alla tabella posts aggiungi una colonna user_id(" $table->unsignedBigInteger('user_id')") e poi gli diciamo : questa migration contiene una foreign key  che sarebbe user id ( $table->foreign('user_id')) che fa riferimento all'id ("reference('id)") contenuto nella tabella users (on('user_id')), se seguiamo le convenzioni possiamo usare al posto delle 2 operazioni separate : $table->foreingn('user_id')->constraind()  -->
+<!-- nella cancellazione (roll back) dovremo prima togliere il vincolo e poi eliminare la tabella nel db  -->
+<!-- queste relazioni non saranno solo a livello tabellare (database) ma anche a livello modelli  -->
+<!-- come abbiamo detto prima le relazioni sono bidirezionali cioè l' user è relazionato con i post (uno a molti ) e il post lo è con l'user (uno ad uno) -->
+<!-- % model  -->
+<!-- nel modello andremo a definire la relazione creando un metodo specifico ritornando la relazione con la tabella -->
+<!-- nel nostro caso la predominante sarà user(uno) e la secondaria sarà posts(molti) -->
+<!-- nel model di user avremo hasMany() :  Class User extends Model { public function posts(){ return $this->hasMany('App\Post')}} -->
+<!-- nel model di post avremo belongsTo() :  Class Post extends Model { public function user(){ return $this->belongsTo('App\User')}} -->
+<!-- #relazione diretta uno a uno  -->
+<!-- user con info_user(dati specifici dell'utente) -->
+<!-- nella relazione uno ad uno  ci sarà sempre una predominante(principale) rispetto all'altra , nel nostro caso il modello principale sarà user e il secondario sarà user info perche un utente può esistere senza delle info specifiche ma le info non possono esistere senza un utente -->
+<!-- nel modello della predominante andremo a creare una funzione (metodo) pubblica/o nel quale andremo a restituire il tipo di relazione hasOne() e che avrà come nome della funzione il nome del modello secondario in camel case : Class User extends Model { public function UserInfo(){ return $this->hasOne('App\UserInfo')}} -->
+<!-- nel modello secondario andremo a fare la stessa cosa ma la relazione sarà belongTo()    : Class UserInfo extends Model { public function user(){ return $this->belongsTo('App\User')}} -->
