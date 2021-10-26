@@ -147,6 +147,8 @@ category _> post
 <!-- validiamo la category senza value(nessuna categoria)
  'category_id' => 'nullable|exists:categories,id' controlla se il valore inserito è nella tabella categories, colonna id altrimenti metti null -->
  <!-- NELLO SHOW GESTIAMO IL SENZA CATEGORIA CON UN IF -->
+ <!-- lo stesso lo facciamo nell'index  -->
+ <!-- ! 1.45 -->
 
 ||
 ||
