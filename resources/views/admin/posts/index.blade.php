@@ -33,7 +33,11 @@
 
             <td>{{ $post->id }}</td>
             <td>{{ $post->title }}</td>
-            <td>@if ($post->category)<span class="badge badge-pill badge-success px-2">{{ $post->category->name }}</span>@else-@endif</td>
+            <td>
+              @if ($post->category)<span
+                class="badge badge-pill badge-{{ $post->category->color ?? 'light' }}">{{ $post->category->name }}</span>@else-
+              @endif
+            </td>
             {{-- usiamo la funzione per stampare la data formattata ' funzione proviene dal model ' --}}
             <td>{{ $post->getFormattedDate('created_at', 'd-m-Y') }}</td>
             <td>

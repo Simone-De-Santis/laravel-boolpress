@@ -160,7 +160,8 @@ category _> post
 <!-- creiamo le rotte in web php -->
 <!-- creiamo poi il controller con $php artisan make:controller Admin -->
 <!-- in category Controller andiamo a definire tutte le crud -->
-<!-- nel  -->
+<!-- andiamo a modificare i vai valori delle selected per passare le categorie e i relativi valori -->
+<!-- * aggiungiamo la colonna del totale dei post nella index delle category -->
 
 ||
 ||

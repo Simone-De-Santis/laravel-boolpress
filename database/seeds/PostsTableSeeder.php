@@ -7,6 +7,9 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 // import faker
 use Faker\Generator as Faker;
+// import model category
+use App\Models\Category;
+use Illuminate\Support\Arr;
 
 class PostsTableSeeder extends Seeder
 {
@@ -17,10 +20,13 @@ class PostsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 100; $i++) {
+        $categories_id = Category::select('id')->pluck('id')->toArray();
+
+        for ($i = 0; $i < 25; $i++) {
             // instanziamo nuovo elemento 
             $Post = new Post();
             // tramite la docs di faker php vediamo i parametri da passare
+            $Post->category_id = Arr::random($categories_id);
             $Post->title = $faker->words(5, true);
             $Post->content = $faker->text(200);
             $Post->image = $faker->imageUrl(360, 360);
