@@ -146,9 +146,9 @@ category _> post
 <!-- dopo aver premuto il pulsante salva si passa in store dove dovremo andare ad aggiungere la colonna categories nella cartella dei dati da fillare -->
 <!-- validiamo la category senza value(nessuna categoria)
  'category_id' => 'nullable|exists:categories,id' controlla se il valore inserito è nella tabella categories, colonna id altrimenti metti null -->
- <!-- NELLO SHOW GESTIAMO IL SENZA CATEGORIA CON UN IF -->
+ <!-- NELLO views/SHOW GESTIAMO IL SENZA CATEGORIA CON UN IF -->
  <!-- lo stesso lo facciamo nell'index  -->
- <!-- ! 1.45 -->
+ <!-- passiamo i dati della category nel form di edit tramite il post/controller->edit  poi andiamo a stampare la propietà relativa all'oggetto aggiungendola all'old-->
 
 ||
 ||

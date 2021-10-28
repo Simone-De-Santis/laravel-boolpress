@@ -7,7 +7,6 @@
 
 
 @csrf
-@dd($post)
 <div class=" form-group">
   <label for="title">Titile</label>
   <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
@@ -32,7 +31,7 @@
     <select class="form-control" id="category_id" name="category_id">
       <option>Not Category</option>
       @foreach ($categories as $category)
-        <option @if (old('category_id') == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
+        <option @if (old('category_id', $post->category_id) == $category->id) selected @endif value="{{ $category->id }}">{{ $category->name }}</option>
 
       @endforeach
 
