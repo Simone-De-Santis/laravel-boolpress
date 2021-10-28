@@ -2064,6 +2064,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostCard",
   props: ["post"],
@@ -38742,24 +38751,47 @@ var render = function() {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-8" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "card-header d-flex align-items-center justify-content-between"
+            },
+            [
+              _c("h5", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(_vm.post.title))
+              ]),
+              _vm._v(" "),
+              _c(
+                "span",
+                { staticClass: "badge badge-pill badge-success px-2" },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(_vm.post.category.name || "nn")
+                  )
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(_vm.post.title))
-            ]),
-            _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [
               _vm._v(
                 "\n                    " +
                   _vm._s(_vm.post.content) +
                   "\n                "
               )
-            ]),
-            _vm._v(" "),
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-footer" }, [
             _c("p", { staticClass: "card-text d-flex justify-content-end " }, [
               _c("small", { staticClass: "text-muted" }, [
                 _vm._v(
                   "Published on:\n                        " +
-                    _vm._s(_vm.getFormattedDate(_vm.post.created_at))
+                    _vm._s(_vm.getFormattedDate(_vm.post.created_at)) +
+                    "\n                    "
                 )
               ])
             ])

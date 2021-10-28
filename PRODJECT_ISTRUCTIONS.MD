@@ -154,7 +154,7 @@ category _> post
 <!-- ?mod index admin -->
 <!-- creiamo un riassunto dove mostriamo quanti post ci sono in ogni categoria -->
 <!-- passiamo dal controller le categorie nell'index e stampaimo in pagina -->
-<!-- aggiungendo with('category') in post controllex index insieme al post viene mandata tutta l'istanza della categoria per ogni post  -->
+<!-- aggiungendo with('category') in cardPostController index insieme al post viene mandata tutta l'istanza della categoria per ogni post  -->
 
 ||
 ||

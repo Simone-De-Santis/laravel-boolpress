@@ -19,7 +19,7 @@ class PostController extends Controller
         //parametro order dinamico para
         // prendiamo dalla query il parametro order e definiamo un default
         $order = $request->query('order') ?? 'asc';
-        $posts = Post::orderBy('id', $order)->paginate(5);
+        $posts = Post::with('category')->orderBy('id', $order)->paginate(5);
         // eloquent restituisce sempre una collection 
 
         return response()->json($posts);

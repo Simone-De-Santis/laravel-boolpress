@@ -5,16 +5,25 @@
                 <img src="" alt="..." />
             </div>
             <div class="col-md-8">
-                <div class="card-body">
+                <div
+                    class="card-header d-flex align-items-center justify-content-between"
+                >
                     <h5 class="card-title">{{ post.title }}</h5>
+                    <span class="badge badge-pill badge-success px-2">
+                        {{ post.category.name || "nn" }}</span
+                    >
+                </div>
+                <div class="card-body">
                     <p class="card-text">
                         {{ post.content }}
                     </p>
+                </div>
+                <div class="card-footer">
                     <p class="card-text d-flex justify-content-end ">
                         <small class="text-muted"
                             >Published on:
-                            {{ getFormattedDate(post.created_at) }}</small
-                        >
+                            {{ getFormattedDate(post.created_at) }}
+                        </small>
                     </p>
                 </div>
             </div>
