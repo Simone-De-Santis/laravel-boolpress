@@ -41,7 +41,7 @@
             </td>
             {{-- usiamo la funzione per stampare la data formattata ' funzione proviene dal model ' --}}
             <td>{{ $post->getFormattedDate('created_at', 'd-m-Y') }}</td>
-            <td>@if ($post->user){{ $post->user->name }}@else --- @endif</td>
+            <td>@if ($post->author){{ $post->author->name }}@else --- @endif</td>
 
             <td>
               <div class="d-flex justify-content-end">
