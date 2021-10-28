@@ -170,6 +170,9 @@ category _> post
 <!-- in Post controller admin nella sezione store andiamo a salvare i dati dell'utente loggato aggiungendo $data['user_id']=Auth::id() -->
 <!-- dobbiamo aggiungere il fillable nel modello senno viene ignorato il parametro  -->
 <!-- * possiamo cambiare nome alla funzione della tabella di relazione nel modello però dando il secondo parametro alla funzione con il nome della tabella da cercare ed eventualmente il terzo parametro con la chiave se nominata diverso da id  -->
+<!-- ? relazione one to one -->
+<!-- user user info -->
+<!-- creaimo una nuova tabella per le info user php artisan make:model UserInfo -m -c --resource   genera modello  migration controller resource-->
 
 ||
 ||
