@@ -7,6 +7,7 @@
 
 
 @csrf
+@dd($post)
 <div class=" form-group">
   <label for="title">Titile</label>
   <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
