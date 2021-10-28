@@ -149,6 +149,7 @@ category _> post
  <!-- NELLO views/SHOW GESTIAMO IL SENZA CATEGORIA CON UN IF -->
  <!-- lo stesso lo facciamo nell'index  -->
  <!-- passiamo i dati della category nel form di edit tramite il post/controller->edit  poi andiamo a stampare la propietà relativa all'oggetto aggiungendola all'old-->
+ <!-- aggiungiamo la validazione della categoria nel controller post nella sezione update -->
 
 ||
 ||
