@@ -10,7 +10,7 @@
                 >
                     <h5 class="card-title">{{ post.title }}</h5>
                     <span class="badge badge-pill badge-success px-2">
-                        {{ post.category.name || "nn" }}</span
+                        {{ post.category ? post.category.name : "nn" }}</span
                     >
                 </div>
                 <div class="card-body">
