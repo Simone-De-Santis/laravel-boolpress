@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     // impostiamo i campi Fillable per la funzione fill 
-    protected $fillable = ['title', 'content', 'image', 'category_id', 'slug'];
+    protected $fillable = ['title', 'content', 'image', 'category_id', 'slug', 'user_id'];
     // funzione per la formattazione della data grazie a parametri esterni 
     public function getFormattedDate($column, $format = 'd-m-Y H:i:s')
     {
@@ -18,5 +18,9 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

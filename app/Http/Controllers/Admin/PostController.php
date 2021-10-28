@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 // IMPORT MODEL CATEGORIES
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -64,6 +65,8 @@ class PostController extends Controller
 
         $data = request()->all();
         $post = new Post();
+        // dati utente loggato creatore del post
+        $data['user_id'] = Auth::id();
         $post->fill($data);
         // add use STRING
         $post->slug = Str::slug($post->title, '-');

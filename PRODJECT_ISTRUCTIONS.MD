@@ -162,6 +162,13 @@ category _> post
 <!-- in category Controller andiamo a definire tutte le crud -->
 <!-- andiamo a modificare i vai valori delle selected per passare le categorie e i relativi valori -->
 <!-- * aggiungiamo la colonna del totale dei post nella index delle category -->
+<!-- ? RELAZIONE UNO A MOLTI TRA USER E POST -->
+<!-- la relazione debole è post perché non puo esistere senza un autore ma l'autore può esistere senza creare post -->
+<!-- andiamo a fare una migration per aggiungere una migratio alla tabella post nella quale inseriremo la fk (id dell'utente che ha creato il post ) con il comando php artisan make:migration aff_user_id_to_posts_table --table=posts  -->
+<!-- una volta gestita la creazione e il drop (prima il vincolo poi la colonna ) facciamo partire la migrazione-->
+<!-- colleghiamo i modelli in post insertiamo la funzione con belongsTo perche può appartenere solo a un utente e in user  in user aggiungiamo la funzione hasMany -->
+<!-- in Post controller admin nella sezione store andiamo a salvare i dati dell'utente loggato aggiungendo $data['user_id']=Auth::id() -->
+<!-- dobbiamo aggiungere il fillable nel modello senno viene ignorato il parametro  -->
 
 ||
 ||
