@@ -21,12 +21,16 @@ Route::middleware('auth')->name('admin.')->prefix('admin')->namespace('Admin')->
     // tutte le rotte protette
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('posts', 'PostController');
+    // rotta category crud
+    Route::resource('categories', 'CategoryController');
+
+
+
+
     // rotta errore
     Route::get('/{any}', function () {
         abort(404);
     });
-    // rotta category crud
-    Route::resource('categories', 'CategoryController');
 });
 
 
