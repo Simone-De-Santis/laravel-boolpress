@@ -15,7 +15,14 @@ class CreateUserInfosTable extends Migration
     {
         Schema::create('user_infos', function (Blueprint $table) {
             $table->id();
+            // colonna della foreign key dell'utente
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone', 17)->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
+            // vincolo 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 

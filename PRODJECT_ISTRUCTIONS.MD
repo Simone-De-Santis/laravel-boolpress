@@ -172,7 +172,12 @@ category _> post
 <!-- * possiamo cambiare nome alla funzione della tabella di relazione nel modello però dando il secondo parametro alla funzione con il nome della tabella da cercare ed eventualmente il terzo parametro con la chiave se nominata diverso da id  -->
 <!-- ? relazione one to one -->
 <!-- user user info -->
-<!-- creaimo una nuova tabella per le info user php artisan make:model UserInfo -m -c --resource   genera modello  migration controller resource-->
+<!-- creaimo una nuova tabella per le info user php artisan make:model UserInfo -m -c --resource   genera modello  migration controller resource -->
+<!-- avendo creato direttamente la tabella con la colonna della foreing key e il vincolo non c'è bisogno di specificare nel drop chi va tolto prima -->
+<!-- fatto questo avviamo la migrazione -->
+<!-- definiamo le relazioni nei modelli  -->
+<!-- nel model di User definiremo il legame con hasOne visto che è dominante rispetto alle sue info visto che può vivere senza le sue info e non il contrario  -->
+<!-- nel model di user info andremo a definire il legame con la regola belongs to visto che appartiene solo a user info -->
 
 ||
 ||

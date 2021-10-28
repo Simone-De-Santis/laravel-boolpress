@@ -20,6 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        dd(Auth::user()->userInfo->address);
         //
         // paginiamo i risultati 
         $posts = Post::orderBy('id', 'desc')->paginate(10);
