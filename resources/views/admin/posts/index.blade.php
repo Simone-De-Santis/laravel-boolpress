@@ -60,7 +60,29 @@
     <div class="d-flex justify-content-center">
       {{ $posts->links() }}
     </div>
+    {{-- raccoglitore di post per categoria --}}
+    <section id="post-category" class=" mt-5 d-flex justify-content-center">
 
+      <div class="row">
+        @foreach ($categories as $category)
+          <div class="col-md-4 mb-3">
+            <div class="d-flex">
+              <h2>{{ $category->name }}</h2>
+              <p class="text-muted">({{ count($category->posts) }})</p>
+
+            </div>
+
+            @forelse($category->posts as $post)
+              <h5 class='my-2'> <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a></h5>
+
+            @empty
+              <h5>non ci sono post in questa categoria</h5>
+            @endforelse
+          </div>
+        @endforeach
+      </div>
+
+    </section>
 
 
   </div>

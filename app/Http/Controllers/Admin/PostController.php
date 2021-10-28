@@ -22,7 +22,9 @@ class PostController extends Controller
         //
         // paginiamo i risultati 
         $posts = Post::orderBy('id', 'desc')->paginate(10);
-        return view('admin.posts.index', compact('posts'));
+        $categories = Category::all();
+
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
