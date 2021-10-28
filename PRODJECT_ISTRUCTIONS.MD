@@ -156,6 +156,12 @@ category _> post
 <!-- passiamo dal controller le categorie nell'index e stampaimo in pagina -->
 <!-- aggiungendo with('category') in cardPostController index insieme al post viene mandata tutta l'istanza della categoria per ogni post  -->
 
+<!-- # ROUTE CATEGORY -->
+<!-- creiamo le rotte in web php -->
+<!-- creiamo poi il controller con $php artisan make:controller Admin -->
+<!-- in category Controller andiamo a definire tutte le crud -->
+<!-- nel  -->
+
 ||
 ||
 ||
