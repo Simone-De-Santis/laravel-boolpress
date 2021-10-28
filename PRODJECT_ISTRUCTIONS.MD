@@ -151,6 +151,11 @@ category _> post
  <!-- passiamo i dati della category nel form di edit tramite il post/controller->edit  poi andiamo a stampare la propietà relativa all'oggetto aggiungendola all'old-->
  <!-- aggiungiamo la validazione della categoria nel controller post nella sezione update -->
 
+<!-- ?mod index admin -->
+<!-- creiamo un riassunto dove mostriamo quanti post ci sono in ogni categoria -->
+<!-- passiamo dal controller le categorie nell'index e stampaimo in pagina -->
+<!-- aggiungendo with('category') in post controllex index insieme al post viene mandata tutta l'istanza della categoria per ogni post  -->
+
 ||
 ||
 ||
