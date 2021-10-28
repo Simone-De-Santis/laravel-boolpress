@@ -169,6 +169,7 @@ category _> post
 <!-- colleghiamo i modelli in post insertiamo la funzione con belongsTo perche può appartenere solo a un utente e in user  in user aggiungiamo la funzione hasMany -->
 <!-- in Post controller admin nella sezione store andiamo a salvare i dati dell'utente loggato aggiungendo $data['user_id']=Auth::id() -->
 <!-- dobbiamo aggiungere il fillable nel modello senno viene ignorato il parametro  -->
+<!-- * possiamo cambiare nome alla funzione della tabella di relazione nel modello però dando il secondo parametro alla funzione con il nome della tabella da cercare ed eventualmente il terzo parametro con la chiave se nominata diverso da id  -->
 
 ||
 ||

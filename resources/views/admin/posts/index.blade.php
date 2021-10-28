@@ -24,6 +24,7 @@
           <th scope="col">Title</th>
           <th scope="col">Category</th>
           <th scope="col">Created</th>
+          <th scope="col">Author</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -40,6 +41,8 @@
             </td>
             {{-- usiamo la funzione per stampare la data formattata ' funzione proviene dal model ' --}}
             <td>{{ $post->getFormattedDate('created_at', 'd-m-Y') }}</td>
+            <td>@if ($post->user){{ $post->user->name }}@else --- @endif</td>
+
             <td>
               <div class="d-flex justify-content-end">
                 <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary">Detail</a>
