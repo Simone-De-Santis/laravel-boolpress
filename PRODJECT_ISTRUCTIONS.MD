@@ -164,7 +164,7 @@ category _> post
 <!-- * aggiungiamo la colonna del totale dei post nella index delle category -->
 <!-- ? RELAZIONE UNO A MOLTI TRA USER E POST -->
 <!-- la relazione debole è post perché non puo esistere senza un autore ma l'autore può esistere senza creare post -->
-<!-- andiamo a fare una migration per aggiungere una migratio alla tabella post nella quale inseriremo la fk (id dell'utente che ha creato il post ) con il comando php artisan make:migration aff_user_id_to_posts_table --table=posts  -->
+<!-- andiamo a fare una migration per aggiungere una migratio alla tabella post nella quale inseriremo la fk (id dell'utente che ha creato il post ) con il comando php artisan make:migration add_user_id_to_posts_table --table=posts  -->
 <!-- una volta gestita la creazione e il drop (prima il vincolo poi la colonna ) facciamo partire la migrazione-->
 <!-- colleghiamo i modelli in post insertiamo la funzione con belongsTo perche può appartenere solo a un utente e in user  in user aggiungiamo la funzione hasMany -->
 <!-- in Post controller admin nella sezione store andiamo a salvare i dati dell'utente loggato aggiungendo $data['user_id']=Auth::id() -->
@@ -325,7 +325,9 @@ const { data, current_page, last_page } = res.data; -->
 <!-- in DatabaseSeeder possiamo elencare tutti i nostri seeder e in una volta sola cliamarli tutti insieme con lo stesso comando di prima ma senza la --class -->
 <!-- # per vuotare tutto il db e resettare tutte le tuple di tutto il db usiamo php artisan migrate:refresh  -->
 <!-- * andiamo a creare un seeder per l'utente per evitare che quando facciamo il refresh dobbiamo andare a rifare la registrazione d'accapo  -->
-<!-- creiamo il seeder php artisan make:seeder UserTableSeeder -->
+<!-- creiamo il seeder php artisan make:seeder UsersTableSeeder -->
+<!-- importiamo l'utente instanziamo il nuovo utente e andiamo a creare i campi di riempimento  name email e psw alla quale aggiungeremo la funzione bcrypt per la criptazione -->
+<!-- aggiungiamo l'utente al database seeder per farlo prendere al momento del refresh -->
 
 <!-- ? FAKER -->
 <!-- in laravel possiamo creare dei dati fake ma plausibili per popolare il nostro db di dati verosimili per lo sviluppo  -->

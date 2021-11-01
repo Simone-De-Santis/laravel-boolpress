@@ -19,7 +19,7 @@ class CreateUserInfosTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('address')->nullable();
             $table->string('phone', 17)->nullable();
-            $table->string('country')->nullable();
+            $table->string('country', 3)->nullable();
             $table->timestamps();
             // vincolo 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
