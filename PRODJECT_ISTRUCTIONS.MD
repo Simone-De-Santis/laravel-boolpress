@@ -178,6 +178,7 @@ category _> post
 <!-- definiamo le relazioni nei modelli  -->
 <!-- nel model di User definiremo il legame con hasOne visto che è dominante rispetto alle sue info visto che può vivere senza le sue info e non il contrario  -->
 <!-- nel model di user info andremo a definire il legame con la regola belongs to visto che appartiene solo a user info -->
+<!-- ! 89 start -->
 
 ||
 ||
@@ -323,6 +324,8 @@ const { data, current_page, last_page } = res.data; -->
 <!-- una volta creato per avviare il seeder facciamo partire il comando : 'php artisan db:seed --class=PostsTableSeeder ' -->
 <!-- in DatabaseSeeder possiamo elencare tutti i nostri seeder e in una volta sola cliamarli tutti insieme con lo stesso comando di prima ma senza la --class -->
 <!-- # per vuotare tutto il db e resettare tutte le tuple di tutto il db usiamo php artisan migrate:refresh  -->
+<!-- * andiamo a creare un seeder per l'utente per evitare che quando facciamo il refresh dobbiamo andare a rifare la registrazione d'accapo  -->
+<!-- creiamo il seeder php artisan make:seeder UserTableSeeder -->
 
 <!-- ? FAKER -->
 <!-- in laravel possiamo creare dei dati fake ma plausibili per popolare il nostro db di dati verosimili per lo sviluppo  -->
